@@ -1,0 +1,27 @@
+﻿/* Modal background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+}
+
+/* Modal box */
+.modal-content {
+    background: white;
+    margin: 10% auto;
+    padding: 20px;
+    width: 70%;
+    border-radius: 8px;
+}
+
+/* Close button */
+.close {
+    float: right;
+    font-size: 28px;
+    cursor: pointer;
+}
