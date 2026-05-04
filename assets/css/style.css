@@ -229,7 +229,6 @@ ul { list-style: none; }
   max-width: var(--max-width);
   margin: 0 auto;
   position: relative;
-  overflow: hidden;
 }
 
 .hero-bg {
@@ -247,14 +246,15 @@ ul { list-style: none; }
   inset: 0;
   background-size: cover;
   background-position: center;
-  filter: blur(48px) saturate(0.75);
+  filter: blur(20px) saturate(0.8);
   opacity: 0;
-  transform: scale(1.1);
+  -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%);
   transition: opacity 1.8s ease;
 }
 
 .hero-bg-slide.active {
-  opacity: 0.2;
+  opacity: 0.3;
 }
 
 .hero-inner {
@@ -716,8 +716,8 @@ ul { list-style: none; }
   background: #1a1a1a;
   border-radius: var(--radius-lg);
   width: 100%;
-  max-width: 780px;
-  max-height: 90svh;
+  max-width: 1100px;
+  max-height: 95svh;
   overflow-y: auto;
   position: relative;
   transform: translateY(20px);
