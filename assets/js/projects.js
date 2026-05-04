@@ -4,99 +4,51 @@
 //  Images/GIFs go in assets/images/
 //
 //  media types: "image" | "gif" | "video" | "youtube"
-//  categories: "gameplay" | "environment" | "prototype" (used for filtering)
+//  categories: array — any combo of:
+//    "gameplay" | "environment" | "programming" | "tech-art" | "prototype"
+//  gallery: optional array of { src, caption } shown in the modal below the video
 // ============================================================
 
 const PROJECTS = [
   {
     id: 1,
-    title: "Project Title One",
-    summary: "A short one-liner that appears on the card.",
-    description: `A longer description for the modal. Talk about the gameplay systems, technical challenges you overcame, what you learned, and what you're proud of. This can be a few sentences to a paragraph.`,
-    category: "gameplay",
-    tags: ["Unreal Engine 5", "Blueprints", "C++"],
-    media: {
-      type: "image",          // "image" | "gif" | "video" | "youtube"
-      src: "assets/images/project1-thumb.jpg",   // path to your image/gif
-      // For youtube: src: "https://www.youtube.com/embed/VIDEO_ID"
-    },
-    details: [
-      { label: "Role",     value: "Solo Developer" },
-      { label: "Engine",   value: "Unreal Engine 5" },
-      { label: "Duration", value: "3 months" },
-      { label: "Year",     value: "2024" },
-    ],
-    links: [
-      { label: "View on GitHub", url: "https://github.com/yourusername/project1" },
-      { label: "Play on itch.io", url: "https://itch.io/..." },
-    ],
-  },
-
-  {
-    id: 2,
-    title: "Environment Showcase",
-    summary: "A photoreal environment built with Nanite, Lumen, and procedural foliage.",
-    description: `Describe the environment project here. What was your inspiration? What techniques did you use for lighting, landscape, or vegetation? Did you create your own materials?`,
-    category: "environment",
-    tags: ["Unreal Engine 5", "Nanite", "Lumen", "Environment Art"],
-    media: {
-      type: "gif",
-      src: "assets/images/project2-demo.gif",
-    },
-    details: [
-      { label: "Role",     value: "Environment Artist" },
-      { label: "Engine",   value: "Unreal Engine 5" },
-      { label: "Duration", value: "6 weeks" },
-      { label: "Year",     value: "2024" },
-    ],
-    links: [
-      { label: "ArtStation Post", url: "https://www.artstation.com/..." },
-    ],
-  },
-
-  {
-    id: 3,
-    title: "Prototype: Parkour Mechanics",
-    summary: "A rapid movement system prototype exploring wall-running and vaulting.",
-    description: `Describe what you built and why. What was the design goal? What was the trickiest technical aspect? This is a great place to explain Blueprints vs C++ decisions, performance considerations, or design iterations.`,
-    category: "prototype",
-    tags: ["C++", "Animation Blueprint", "Character Movement"],
+    title: "Whistle",
+    summary: "A university collaboration — I owned everything on the game side: level design, tech art, music, implementation, and code.",
+    description: `Whistle was a university project built in collaboration with a small team of classmates. All game-side work was done by me — level design, tech art, music composition and implementation, coding, and systems architecture. The art assets were contributed by other team members. I plan to continue developing the project independently, replacing external assets and publishing a full release.\n\nThe two features I'm most proud of are a GPU-based foliage growing system that drives real-time environmental storytelling, and a Universal Occlusion Mask that dynamically keeps the player visible regardless of geometry — a tricky technical problem that required a custom material solution.`,
+    categories: ["gameplay", "programming", "environment", "tech-art"],
+    tags: ["Unreal Engine 5", "C++", "Tech Art", "GPU Foliage", "Level Design"],
     media: {
       type: "youtube",
-      src: "https://www.youtube.com/embed/dQw4w9WgXcQ", // Replace with your video ID
+      src: "https://www.youtube.com/embed/PZnZo3tKxfw",
     },
+    gallery: [
+      { src: "assets/images/Whistle.gif",         caption: "Whistle" },
+      { src: "assets/images/GrowingPlats.gif",    caption: "Growing platforms" },
+      { src: "assets/images/mycel.gif",           caption: "Mycelium spread system" },
+      { src: "assets/images/Occlusion.gif",       caption: "Universal Occlusion Mask" },
+      { src: "assets/images/Animation2.gif",         caption: "BioDome environment" },
+      { src: "assets/images/Animation1.gif",     caption: "Undergrowth" },
+      { src: "assets/images/Animation.gif",       caption: "Character animation" },
+      { src: "assets/images/Bouncy.gif",          caption: "Bouncy physics" },
+      { src: "assets/images/Jumping.gif",         caption: "Jump mechanics" },
+      { src: "assets/images/Grindrail.gif",       caption: "Grind rail system" },
+      { src: "assets/images/short.gif",           caption: "GPU Foliage" },
+      { src: "assets/images/1.webp",              caption: "" },
+      { src: "assets/images/2.webp",              caption: "" },
+      { src: "assets/images/3.webp",              caption: "" },
+      { src: "assets/images/4.jpg",               caption: "" },
+    ],
     details: [
-      { label: "Role",     value: "Programmer" },
-      { label: "Engine",   value: "Unreal Engine 5" },
-      { label: "Duration", value: "2 weeks" },
-      { label: "Year",     value: "2023" },
+      { label: "Role",   value: "Solo (game side)" },
+      { label: "Team",   value: "University collaboration" },
+      { label: "Engine", value: "Unreal Engine 5" },
+      { label: "Status", value: "In development" },
     ],
-    links: [
-      { label: "GitHub", url: "https://github.com/yourusername/parkour-prototype" },
-    ],
+    links: [],
   },
 
-  {
-    id: 4,
-    title: "University Final Project",
-    summary: "My capstone project — a [genre] game built over [duration] with a team of [n].",
-    description: `Describe your degree project here. Context on the brief, team size, your specific responsibilities, and the outcome. Did you win any awards or get shown at a showcase?`,
-    category: "gameplay",
-    tags: ["Unreal Engine 5", "Team Project", "Game Design"],
-    media: {
-      type: "image",
-      src: "assets/images/project4-thumb.jpg",
-    },
-    details: [
-      { label: "Role",     value: "Lead Programmer" },
-      { label: "Team",     value: "4 people" },
-      { label: "Engine",   value: "Unreal Engine 5" },
-      { label: "Year",     value: "2024" },
-    ],
-    links: [
-      { label: "Download on itch.io", url: "https://itch.io/..." },
-    ],
-  },
+  // ---- ADD MORE PROJECTS BELOW ----
+  // Copy the block above, give it a new id, and fill in your details.
 ];
 
 // ============================================================
@@ -111,7 +63,16 @@ function renderProjects(filter = 'all') {
 
   const filtered = filter === 'all'
     ? PROJECTS
-    : PROJECTS.filter(p => p.category === filter);
+    : PROJECTS.filter(p =>
+        Array.isArray(p.categories)
+          ? p.categories.includes(filter)
+          : p.category === filter
+      );
+
+  if (filtered.length === 0) {
+    grid.innerHTML = `<p style="color:var(--mid); grid-column:1/-1;">No projects in this category yet.</p>`;
+    return;
+  }
 
   filtered.forEach((project, i) => {
     const card = document.createElement('article');
@@ -160,6 +121,19 @@ function buildThumb(media, context) {
   return `<div class="project-thumb"><img src="${media.src}" alt="Project thumbnail" loading="lazy" /></div>`;
 }
 
+function buildGallery(gallery) {
+  if (!gallery || gallery.length === 0) return '';
+
+  const items = gallery.map(item => `
+    <div class="gallery-item">
+      <img src="${item.src}" alt="${item.caption || ''}" loading="lazy" />
+      ${item.caption ? `<p class="gallery-caption">${item.caption}</p>` : ''}
+    </div>
+  `).join('');
+
+  return `<div class="modal-gallery">${items}</div>`;
+}
+
 function openModal(project) {
   document.getElementById('modalTitle').textContent = project.title;
   document.getElementById('modalDesc').textContent = project.description;
@@ -176,6 +150,9 @@ function openModal(project) {
   document.getElementById('modalLinks').innerHTML = (project.links || [])
     .map(l => `<a href="${l.url}" target="_blank" rel="noopener" class="btn btn-ghost">${l.label} ↗</a>`)
     .join('');
+
+  const galleryEl = document.getElementById('modalGallery');
+  if (galleryEl) galleryEl.innerHTML = buildGallery(project.gallery);
 
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
