@@ -13,7 +13,7 @@ const PROJECTS = [
   {
     id: 1,
     title: "Whistle",
-    summary: "A university collaboration — I owned everything on the game side: level design, tech art, music, implementation, and code.",
+    summary: "An open-world platformer built in C++ — featuring a GPU foliage tracking system, modular input buffer, custom player movement, and a Universal Occlusion Mask.",
     description: `Whistle was a university project built in collaboration with a small team of classmates. All game-side work was done by me — level design, tech art, music composition and implementation, coding, and systems architecture. The art assets were contributed by other team members. I plan to continue developing the project independently, replacing external assets and publishing a full release.\n\nThe two features I'm most proud of are a GPU-based foliage growing system that drives real-time environmental storytelling, and a Universal Occlusion Mask that dynamically keeps the player visible regardless of geometry — a tricky technical problem that required a custom material solution.`,
     categories: ["gameplay", "programming", "environment", "tech-art"],
     tags: ["Unreal Engine 5", "C++", "Tech Art", "Level Design"],

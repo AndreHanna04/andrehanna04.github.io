@@ -103,7 +103,7 @@ reveals.forEach(el => revealObserver.observe(el));
 // ---- CONTACT FORM ----
 // Uses Formspree — sign up free at formspree.io, create a form,
 // then replace the URL below with your own endpoint.
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/YOUR_FORM_ID';
+const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mjglyapp';
 
 const contactForm = document.getElementById('contactForm');
 const formStatus  = document.getElementById('formStatus');
