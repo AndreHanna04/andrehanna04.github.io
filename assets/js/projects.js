@@ -1,7 +1,7 @@
 // ============================================================
 //  PROJECTS DATA
 //  Add, remove, or edit projects here.
-//  Images/GIFs go in assets/images/
+//  Images/GIFs go in assets/images/whistle/
 //
 //  media types: "image" | "gif" | "video" | "youtube"
 //  categories: array — any combo of:
@@ -16,27 +16,27 @@ const PROJECTS = [
     summary: "A university collaboration — I owned everything on the game side: level design, tech art, music, implementation, and code.",
     description: `Whistle was a university project built in collaboration with a small team of classmates. All game-side work was done by me — level design, tech art, music composition and implementation, coding, and systems architecture. The art assets were contributed by other team members. I plan to continue developing the project independently, replacing external assets and publishing a full release.\n\nThe two features I'm most proud of are a GPU-based foliage growing system that drives real-time environmental storytelling, and a Universal Occlusion Mask that dynamically keeps the player visible regardless of geometry — a tricky technical problem that required a custom material solution.`,
     categories: ["gameplay", "programming", "environment", "tech-art"],
-    tags: ["Unreal Engine 5", "C++", "Tech Art", "GPU Foliage", "Level Design"],
+    tags: ["Unreal Engine 5", "C++", "Tech Art", "Level Design"],
     media: {
       type: "youtube",
       src: "https://www.youtube.com/embed/PZnZo3tKxfw",
     },
     gallery: [
-      { src: "assets/images/Whistle.gif",         caption: "Whistle" },
-      { src: "assets/images/GrowingPlats.gif",    caption: "Growing platforms" },
-      { src: "assets/images/mycel.gif",           caption: "Mycelium spread system" },
-      { src: "assets/images/Occlusion.gif",       caption: "Universal Occlusion Mask" },
-      { src: "assets/images/Animation2.gif",         caption: "BioDome environment" },
-      { src: "assets/images/Animation1.gif",     caption: "Undergrowth" },
-      { src: "assets/images/Animation.gif",       caption: "Character animation" },
-      { src: "assets/images/Bouncy.gif",          caption: "Bouncy physics" },
-      { src: "assets/images/Jumping.gif",         caption: "Jump mechanics" },
-      { src: "assets/images/Grindrail.gif",       caption: "Grind rail system" },
-      { src: "assets/images/short.gif",           caption: "GPU Foliage" },
-      { src: "assets/images/1.webp",              caption: "" },
-      { src: "assets/images/2.webp",              caption: "" },
-      { src: "assets/images/3.webp",              caption: "" },
-      { src: "assets/images/4.jpg",               caption: "" },
+      { src: "assets/images/whistle/Whistle.gif",         caption: "Whistle" },
+      { src: "assets/images/whistle/GrowingPlats.gif",    caption: "Growing platforms" },
+      { src: "assets/images/whistle/mycel.gif",           caption: "Mycelium spread system" },
+      { src: "assets/images/whistle/Occlusion.gif",       caption: "Universal Occlusion Mask" },
+      { src: "assets/images/whistle/Animation2.gif",         caption: "BioDome environment" },
+      { src: "assets/images/whistle/Animation1.gif",     caption: "Undergrowth" },
+      { src: "assets/images/whistle/Animation.gif",       caption: "Character animation" },
+      { src: "assets/images/whistle/Bouncy.gif",          caption: "Bouncy physics" },
+      { src: "assets/images/whistle/Jumping.gif",         caption: "Jump mechanics" },
+      { src: "assets/images/whistle/Grindrail.gif",       caption: "Grind rail system" },
+      { src: "assets/images/whistle/short.gif",           caption: "GPU Foliage" },
+      { src: "assets/images/whistle/1.webp",              caption: "" },
+      { src: "assets/images/whistle/2.webp",              caption: "" },
+      { src: "assets/images/whistle/3.webp",              caption: "" },
+      { src: "assets/images/whistle/4.jpg",               caption: "" },
     ],
     details: [
       { label: "Role",   value: "Solo (game side)" },

@@ -2,6 +2,35 @@
 //  MAIN.JS — nav, scroll, filters, modal, contact form
 // ============================================================
 
+// ---- HERO BACKGROUND SLIDESHOW ----
+(function initHeroBg() {
+  const bg = document.getElementById('heroBg');
+  if (!bg || typeof PROJECTS === 'undefined') return;
+
+  const images = [];
+  PROJECTS.forEach(p => {
+    (p.gallery || []).forEach(g => {
+      if (!g.src.match(/\.gif$/i)) images.push(g.src);
+    });
+  });
+  if (images.length === 0) return;
+
+  images.forEach((src, i) => {
+    const slide = document.createElement('div');
+    slide.className = 'hero-bg-slide' + (i === 0 ? ' active' : '');
+    slide.style.backgroundImage = `url('${src}')`;
+    bg.appendChild(slide);
+  });
+
+  let current = 0;
+  setInterval(() => {
+    const slides = bg.querySelectorAll('.hero-bg-slide');
+    slides[current].classList.remove('active');
+    current = (current + 1) % slides.length;
+    slides[current].classList.add('active');
+  }, 7000);
+})();
+
 // ---- NAV SCROLL STATE ----
 const nav = document.getElementById('nav');
 window.addEventListener('scroll', () => {
