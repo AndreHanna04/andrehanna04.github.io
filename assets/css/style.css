@@ -3,13 +3,13 @@
    ========================================= */
 
 :root {
-  --cream:     #f7f5f0;
-  --off-white: #fafaf8;
-  --black:     #0e0e0e;
-  --dark:      #1a1a1a;
-  --mid:       #6b6b6b;
-  --light:     #d4d0c8;
-  --accent:    #2a2a2a;
+  --cream:     #151515;
+  --off-white: #111111;
+  --black:     #f0ede8;
+  --dark:      #e0dcd5;
+  --mid:       #888480;
+  --light:     #2e2e2e;
+  --accent:    #d4d0c8;
   --highlight: #c8b89a;
 
   --font-serif: 'DM Serif Display', Georgia, serif;
@@ -105,9 +105,9 @@ ul { list-style: none; }
 }
 
 .btn-primary {
-  background: var(--black);
-  color: #fff;
-  border-color: var(--black);
+  background: var(--dark);
+  color: #111;
+  border-color: var(--dark);
 }
 
 .btn-primary:hover {
@@ -140,7 +140,7 @@ ul { list-style: none; }
   justify-content: space-between;
   padding: 0 2.5rem;
   z-index: 100;
-  background: rgba(250,250,248,0.85);
+  background: rgba(17,17,17,0.88);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid transparent;
@@ -174,8 +174,8 @@ ul { list-style: none; }
 .nav-links a:hover { color: var(--black); }
 
 .nav-cta {
-  background: var(--black) !important;
-  color: #fff !important;
+  background: var(--dark) !important;
+  color: #111 !important;
   padding: 0.5rem 1.25rem;
   border-radius: 100px;
   font-size: 0.875rem !important;
@@ -229,6 +229,16 @@ ul { list-style: none; }
   max-width: var(--max-width);
   margin: 0 auto;
   position: relative;
+}
+
+.hero-name {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--highlight);
+  letter-spacing: 0.08em;
+  margin-bottom: 0.6rem;
+  animation: fadeUp 0.8s ease both;
 }
 
 .hero-eyebrow {
@@ -354,7 +364,7 @@ ul { list-style: none; }
 }
 
 .project-card {
-  background: #fff;
+  background: #1a1a1a;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--light);
@@ -596,8 +606,7 @@ ul { list-style: none; }
   font-family: var(--font-sans);
   font-size: 0.95rem;
   color: var(--dark);
-  background: #fff;
-  transition: border-color var(--transition);
+  background: #1a1a1a;
   resize: vertical;
 }
 
@@ -672,7 +681,7 @@ ul { list-style: none; }
 }
 
 .modal {
-  background: #fff;
+  background: #1a1a1a;
   border-radius: var(--radius-lg);
   width: 100%;
   max-width: 780px;
@@ -692,7 +701,7 @@ ul { list-style: none; }
   top: 1rem;
   float: right;
   margin: 1rem 1rem 0 0;
-  background: var(--cream);
+  background: #222;
   border: none;
   border-radius: 50%;
   width: 36px;
@@ -704,7 +713,7 @@ ul { list-style: none; }
   z-index: 1;
 }
 
-.modal-close:hover { background: var(--light); color: var(--black); }
+.modal-close:hover { background: #333; color: var(--dark); }
 
 .modal-media {
   width: 100%;
