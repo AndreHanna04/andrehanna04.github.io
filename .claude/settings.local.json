@@ -2,7 +2,11 @@
   "permissions": {
     "allow": [
       "PowerShell(git *)",
-      "PowerShell(git add *)"
+      "PowerShell(git add *)",
+      "PowerShell(Get-Command *)",
+      "PowerShell(winget install *)",
+      "PowerShell(choco *)",
+      "PowerShell(pip *)"
     ]
   }
 }
