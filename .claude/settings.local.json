@@ -6,7 +6,8 @@
       "PowerShell(Get-Command *)",
       "PowerShell(winget install *)",
       "PowerShell(choco *)",
-      "PowerShell(pip *)"
+      "PowerShell(pip *)",
+      "WebFetch(domain:www.artstation.com)"
     ]
   }
 }

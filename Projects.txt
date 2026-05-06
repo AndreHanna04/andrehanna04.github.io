@@ -1,0 +1,33 @@
+
+PROJECT 1
+
+Title - Environmental Design and creation
+
+Description - For a class, we were required to make a landscape but I decided to make custom grass for the project. I wanted to make the landscape interesting, so I designed a crater where something had hit. The site of the impact had it's gravity reversed, and the flora grew over it. The water travels upwards and the trees grew while being pulled by the roots.
+The grass cards were originally made in Houdini and a low poly grass card was made in blender and then baked in Houdini. My goal for the grass was to make it seem as fluffy as possible while making it performant. The LOD transition between the low and high cards is quite subtle, but i feel as though another, medium resolution grass card would help.
+I used Runtime Virtual textures to give colour to the plants from the world.
+I tried with the trees for a while but the pipeline I learned wasn't really efficient for this kind of fluffy tree. I'll make another at some point that fits this style more.
+
+video links:https://youtu.be/VNVvwwr9Nx4  https://youtu.be/4Qj8tVVD5Mo 
+
+
+
+PROJECT 2
+
+Title - Multiplayer Game Dev
+
+Description - This is a showcase of a multiplayer game I made for a class project. It was only required to be a simple shooter, but I decided to make a 0 gravity shooter with a focus on chaos and movement. This project took and incredible amount of bug testing, iteration and fixing. Things broke so often and I needed to recreate, analyze and fix so many bugs. Programming a game for multiplayer adds such a large amount of complexity to a project and that introduced so many UI issue, gameplay issues or desync issues.
+I also had to focus a bit more on player experience and add elements that improve the UX. I added things like hitmarkers and meters to help communicate more information for the player.
+I really like the concept of this project, and I think it's something I could definitely work on again in the future.
+
+Video links: https://youtu.be/nHpZx92GBIo
+
+PROJECT 3
+
+Title - Junkyard Drifter
+
+Description - This was a small game I made solo for the Ubisoft 2024 AU/NZ Game jam. The theme was trash so I'd made this little trash world skating game. This was made in 2 weeks while also juggling assignments and work.
+What did I learn from this? Well.. a lot. I learnt the importance of scope control, how vital playtesting is for a fun and working game. how important it is to be comfortable with your tools, How effective game planning can be and why I need to do it more. I had a lot of fun making this and I'm proud of what I made, especially since this was made alone but there's definitely a lot of things I would change if I did this again.
+The Game page is Here: https://andopie.itch.io/junkworld-drifter
+
+Video Links: https://youtu.be/W3cAsmOqk2A
