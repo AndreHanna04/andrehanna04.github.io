@@ -50,11 +50,18 @@ const PROJECTS = [
       { src: "assets/images/whistle/PeEEPlzs1k-mvCoHk9kESTXm0DkVJEPl4bB8VNS2FNw.gif", caption: "" },
       { src: "assets/images/whistle/vP6R5I0gDCMroMi6EOgeLpqc-ZqY2uRkk1G0mcCwdQ0.gif", caption: "" },
     ],
+    highlights: [
+      "GPU foliage tracking system — real-time environmental storytelling",
+      "Universal Occlusion Mask via custom material node graph",
+      "Modular C++ input buffer with extensible architecture",
+      "Solo game-side owner: code, level design, tech art, and audio",
+    ],
     details: [
-      { label: "Role",   value: "Solo (game side)" },
-      { label: "Team",   value: "University collaboration" },
-      { label: "Engine", value: "Unreal Engine 5" },
-      { label: "Status", value: "In development" },
+      { label: "Role",     value: "Solo (game side)" },
+      { label: "Team",     value: "University collaboration" },
+      { label: "Engine",   value: "Unreal Engine 5" },
+      { label: "Duration", value: "6 months" },
+      { label: "Status",   value: "In development" },
     ],
     links: [],
   },
@@ -85,11 +92,18 @@ const PROJECTS = [
       { src: "assets/images/Environmental Design and creation/andre-hanna-image-2024-10-29-213911343.jpg",     caption: "" },
       { src: "assets/images/Environmental Design and creation/andre-hanna-screenshot-2024-10-29-201020.jpg",   caption: "" },
     ],
+    highlights: [
+      "Custom grass pipeline: Houdini → Blender → UE5 with LOD transitions",
+      "Runtime Virtual Textures for per-plant world colour blending",
+      "Performance-first foliage: GPU-optimised cards across multiple LODs",
+      "Environment concept: reversed gravity, upward water, inverted flora",
+    ],
     details: [
-      { label: "Role",   value: "Solo" },
-      { label: "Engine", value: "Unreal Engine 5" },
-      { label: "Tools",  value: "Houdini, Blender" },
-      { label: "Status", value: "Complete" },
+      { label: "Role",     value: "Solo" },
+      { label: "Engine",   value: "Unreal Engine 5" },
+      { label: "Tools",    value: "Houdini, Blender" },
+      { label: "Duration", value: "1 trimester" },
+      { label: "Status",   value: "Complete" },
     ],
     links: [],
   },
@@ -116,11 +130,18 @@ const PROJECTS = [
       { src: "assets/images/Multiplayer Game Dev/andre-hanna-image-2024-10-30-094945112.jpg",  caption: "" },
       { src: "assets/images/Multiplayer Game Dev/andre-hanna-image-2024-10-30-095206132.jpg",  caption: "" },
     ],
+    highlights: [
+      "Networked gameplay via Epic Online Services",
+      "Diagnosed and resolved desync bugs across multiplayer sessions",
+      "Custom UX systems: hitmarkers, meters, and player feedback loops",
+      "Zero-gravity movement system designed around chaos and momentum",
+    ],
     details: [
-      { label: "Role",   value: "Solo" },
-      { label: "Engine", value: "Unreal Engine 5" },
-      { label: "Focus",  value: "Online Multiplayer" },
-      { label: "Status", value: "Complete" },
+      { label: "Role",     value: "Solo" },
+      { label: "Engine",   value: "Unreal Engine 5" },
+      { label: "Focus",    value: "Online Multiplayer" },
+      { label: "Duration", value: "1 trimester" },
+      { label: "Status",   value: "Complete" },
     ],
     links: [],
   },
@@ -148,11 +169,18 @@ const PROJECTS = [
       { src: "assets/images/Junkyard Drifter/andre-hanna-screenshot-2024-04-12-225428.jpg",  caption: "" },
       { src: "assets/images/Junkyard Drifter/andre-hanna-screenshot-2024-04-12-231312.jpg",  caption: "" },
     ],
+    highlights: [
+      "Solo shipped under a 2-week hard deadline",
+      "Scope control and feature prioritisation under jam pressure",
+      "Playtesting-driven iteration for feel and fun",
+      "Published and live on itch.io",
+    ],
     details: [
-      { label: "Role",   value: "Solo" },
-      { label: "Engine", value: "Unreal Engine 5" },
-      { label: "Event",  value: "Ubisoft Game Jam 2024" },
-      { label: "Status", value: "Complete" },
+      { label: "Role",     value: "Solo" },
+      { label: "Engine",   value: "Unreal Engine 5" },
+      { label: "Event",    value: "Ubisoft Game Jam 2024" },
+      { label: "Duration", value: "2 weeks" },
+      { label: "Status",   value: "Complete" },
     ],
     links: [
       { label: "Play on itch.io ↗", url: "https://andopie.itch.io/junkworld-drifter" },
@@ -180,11 +208,16 @@ const PROJECTS = [
       { src: "assets/images/Environment and Animation Test/andre-hanna-screenshot-2023-10-19-163236.jpg", caption: "" },
       { src: "assets/images/Environment and Animation Test/andre-hanna-screenshot-2023-10-19-163226.jpg", caption: "" },
     ],
+    highlights: [
+      "UE5 environment modelling and Sequencer cinematic animation",
+      "Strong visual design sensibility — stylised lighting and composition",
+    ],
     details: [
-      { label: "Role",   value: "Solo" },
-      { label: "Engine", value: "Unreal Engine 5" },
-      { label: "Focus",  value: "Environment & Animation" },
-      { label: "Status", value: "Complete" },
+      { label: "Role",     value: "Solo" },
+      { label: "Engine",   value: "Unreal Engine 5" },
+      { label: "Focus",    value: "Environment & Animation" },
+      { label: "Duration", value: "2 weeks" },
+      { label: "Status",   value: "Complete" },
     ],
     links: [],
   },
@@ -210,11 +243,18 @@ const PROJECTS = [
       { src: "assets/images/3D Character Creation/andre-hanna-screenshot-2024-03-17-234314.jpg", caption: "" },
       { src: "assets/images/3D Character Creation/andre-hanna-screenshot-2024-02-07-195321.jpg", caption: "" },
     ],
+    highlights: [
+      "Full DCC pipeline: ZBrush sculpt → Maya retopo → Substance Painter → UE5",
+      "ZRemesher low-poly workflow with manual Maya cleanup",
+      "PBR texturing and material authoring in Substance Painter",
+      "Solo pipeline execution completed within one trimester",
+    ],
     details: [
-      { label: "Role",   value: "Solo" },
-      { label: "Tools",  value: "ZBrush, Maya, Substance Painter, UE5" },
-      { label: "Focus",  value: "Character Creation" },
-      { label: "Status", value: "Complete" },
+      { label: "Role",     value: "Solo" },
+      { label: "Tools",    value: "ZBrush, Maya, Substance Painter, UE5" },
+      { label: "Focus",    value: "Character Creation" },
+      { label: "Duration", value: "1 trimester" },
+      { label: "Status",   value: "Complete" },
     ],
     links: [
       { label: "View on Sketchfab ↗", url: "https://sketchfab.com/3d-models/persona-style-character-with-eyes-7cb73197072d443f9e97108d7fc7a14d" },
@@ -242,11 +282,16 @@ const PROJECTS = [
       { src: "assets/images/Of Rust/andre-hanna-screenshot-2023-08-19-002537.jpg",     caption: "" },
       { src: "assets/images/Of Rust/andre-hanna-screenshot-2023-08-20-220624.jpg",     caption: "" },
     ],
+    highlights: [
+      "Self-directed learning: built a complete UE5 project from scratch",
+      "Foundation that launched all subsequent skill development",
+    ],
     details: [
-      { label: "Role",   value: "Solo" },
-      { label: "Engine", value: "Unreal Engine 5" },
-      { label: "Focus",  value: "Learning Project" },
-      { label: "Status", value: "Complete" },
+      { label: "Role",     value: "Solo" },
+      { label: "Engine",   value: "Unreal Engine 5" },
+      { label: "Focus",    value: "Learning Project" },
+      { label: "Duration", value: "1 month" },
+      { label: "Status",   value: "Complete" },
     ],
     links: [],
   },
@@ -377,6 +422,19 @@ function openModal(project) {
     renderVideo(0);
   } else {
     document.getElementById('modalMedia').innerHTML = buildThumb(project.media, 'modal');
+  }
+
+  const highlightsEl = document.getElementById('modalHighlights');
+  if (highlightsEl) {
+    const hl = project.highlights || [];
+    highlightsEl.innerHTML = hl.length
+      ? `<div class="modal-highlights">
+          <h4 class="modal-highlights-title">Skills Demonstrated</h4>
+          <ul class="modal-highlights-list">
+            ${hl.map(h => `<li>${h}</li>`).join('')}
+          </ul>
+        </div>`
+      : '';
   }
 
   document.getElementById('modalDetails').innerHTML = (project.details || [])

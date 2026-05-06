@@ -132,7 +132,7 @@ document.getElementById('modalOverlay').addEventListener('click', (e) => {
 });
 
 // ---- SCROLL REVEAL ----
-const reveals = document.querySelectorAll('.section-header, .skill-group, .about-grid, .social-links, .contact-intro, .contact-email-btn');
+const reveals = document.querySelectorAll('.section-header, .skill-group, .experience-item, .about-grid, .social-links, .contact-intro, .contact-email-btn');
 
 reveals.forEach(el => el.classList.add('reveal'));
 
