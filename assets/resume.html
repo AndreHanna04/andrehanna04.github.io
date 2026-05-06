@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Andre Hanna — Resume</title>
+  <style>
+    /* =====================================================
+       RESUME — open in Chrome, Ctrl+P → Save as PDF
+       Paper: A4 · Margins: None · Background graphics: ON
+       ===================================================== */
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --dark:    #141414;
+      --mid:     #1e1e1e;
+      --accent:  #c8b89a;
+      --text:    #1a1a1a;
+      --muted:   #555;
+      --rule:    #ddd;
+    }
+
+    body {
+      font-family: 'Calibri', 'Arial', 'Helvetica', sans-serif;
+      font-size: 10pt;
+      color: var(--text);
+      background: #fff;
+      line-height: 1.5;
+    }
+
+    .page {
+      width: 210mm;
+      min-height: 297mm;
+      margin: 0 auto;
+      background: #fff;
+    }
+
+    /* =====================================================
+       HEADER
+       ===================================================== */
+
+    .header {
+      background: var(--dark);
+      padding: 26px 30px;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .header-photo {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 3px solid var(--accent);
+      flex-shrink: 0;
+    }
+
+    .header-info {
+      flex: 1;
+    }
+
+    .header-name {
+      font-size: 26pt;
+      font-weight: 700;
+      color: #f0ede8;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      line-height: 1.05;
+      margin-bottom: 4px;
+    }
+
+    .header-title {
+      font-size: 8.5pt;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      column-gap: 16px;
+      row-gap: 3px;
+      font-size: 8.5pt;
+      color: #888;
+    }
+
+    .contact-grid a {
+      color: #aaa;
+      text-decoration: none;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-item::before {
+      content: '';
+      display: inline-block;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+
+    /* =====================================================
+       ACCENT BAR
+       ===================================================== */
+
+    .accent-bar {
+      height: 4px;
+      background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
+    }
+
+    /* =====================================================
+       BODY
+       ===================================================== */
+
+    .body {
+      padding: 20px 30px 28px;
+    }
+
+    /* =====================================================
+       SECTIONS
+       ===================================================== */
+
+    section {
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 7.5pt;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 9px;
+    }
+
+    h2::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* =====================================================
+       SUMMARY
+       ===================================================== */
+
+    .summary-text {
+      font-size: 9.5pt;
+      color: #333;
+      line-height: 1.65;
+    }
+
+    /* =====================================================
+       SKILLS
+       ===================================================== */
+
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .skills-table td {
+      padding: 2.5px 0;
+      font-size: 9pt;
+      vertical-align: top;
+    }
+
+    .skills-table td:first-child {
+      font-weight: 700;
+      color: var(--text);
+      width: 160px;
+      padding-right: 12px;
+      white-space: nowrap;
+    }
+
+    .skills-table td:last-child {
+      color: var(--muted);
+    }
+
+    /* =====================================================
+       ENTRIES
+       ===================================================== */
+
+    .entry {
+      margin-bottom: 11px;
+      padding-left: 10px;
+      border-left: 2px solid var(--rule);
+      transition: border-color 0.2s;
+    }
+
+    .entry:hover {
+      border-left-color: var(--accent);
+    }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .entry-org {
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .entry-date {
+      font-size: 8pt;
+      color: #999;
+      white-space: nowrap;
+      background: #f5f5f5;
+      padding: 1px 7px;
+      border-radius: 20px;
+      flex-shrink: 0;
+    }
+
+    .entry-role {
+      font-size: 8.5pt;
+      color: var(--accent);
+      margin-bottom: 4px;
+      font-style: italic;
+    }
+
+    .entry-role a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    ul {
+      padding-left: 14px;
+      list-style: none;
+    }
+
+    li {
+      font-size: 9pt;
+      color: #333;
+      margin-bottom: 2.5px;
+      line-height: 1.5;
+      position: relative;
+      padding-left: 10px;
+    }
+
+    li::before {
+      content: '→';
+      position: absolute;
+      left: -2px;
+      color: var(--accent);
+      font-size: 8pt;
+    }
+
+    /* =====================================================
+       EDUCATION
+       ===================================================== */
+
+    .edu-entry {
+      margin-bottom: 7px;
+      padding-left: 10px;
+      border-left: 2px solid var(--rule);
+    }
+
+    /* =====================================================
+       PRINT
+       ===================================================== */
+
+    @media print {
+      body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { width: 100%; min-height: unset; }
+      a { text-decoration: none; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <img class="header-photo" src="images/Generic/photo.jpg" alt="Andre Hanna" />
+    <div class="header-info">
+      <div class="header-name">Andre Hanna</div>
+      <div class="header-title">Game Designer &nbsp;·&nbsp; Programmer &nbsp;·&nbsp; Technical Artist</div>
+      <div class="contact-grid">
+        <span class="contact-item">0490 128 950</span>
+        <a class="contact-item" href="mailto:andrehanna49@gmail.com">andrehanna49@gmail.com</a>
+        <span class="contact-item">Beverly Hills, NSW</span>
+        <a class="contact-item" href="https://andrehanna04.github.io" target="_blank">andrehanna04.github.io</a>
+        <a class="contact-item" href="https://www.linkedin.com/in/andre-hanna-8a0a04259/" target="_blank">LinkedIn</a>
+        <a class="contact-item" href="https://github.com/AndreHanna04" target="_blank">GitHub</a>
+        <a class="contact-item" href="https://www.artstation.com/andrehanna9" target="_blank">ArtStation</a>
+        <a class="contact-item" href="https://andopie.itch.io/" target="_blank">itch.io</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="accent-bar"></div>
+
+  <!-- ===== BODY ===== -->
+  <div class="body">
+
+    <!-- SUMMARY -->
+    <section>
+      <h2>Professional Summary</h2>
+      <p class="summary-text">
+        Graduate game developer specialising in Unreal Engine 5, with hands-on experience across C++ gameplay programming, technical art, and game design. Proven ability to own projects end-to-end — building GPU foliage systems, networked multiplayer gameplay, custom material shaders, and full 3D character pipelines. Six months of industry QA experience at Sweaty Chair. A self-driven generalist who thrives on hard problems, with a philosophy of always doing it different.
+      </p>
+    </section>
+
+    <!-- SKILLS -->
+    <section>
+      <h2>Technical Skills</h2>
+      <table class="skills-table">
+        <tr>
+          <td>Engine &amp; Programming</td>
+          <td>Unreal Engine 5 (UE5), Unreal C++, Blueprints Visual Scripting, Unity, C#, Git, Version Control</td>
+        </tr>
+        <tr>
+          <td>Technical Art</td>
+          <td>Advanced Materials &amp; Shaders, GPU Foliage Systems, Runtime Virtual Textures, Custom Cell Shaders, Stylized Rendering</td>
+        </tr>
+        <tr>
+          <td>3D &amp; Content Pipeline</td>
+          <td>Maya, ZBrush, Blender, Substance Painter, Houdini (terrain &amp; foliage), Character Creation, Rigging, Control Rigs</td>
+        </tr>
+        <tr>
+          <td>Systems &amp; Design</td>
+          <td>Online Multiplayer (Epic Online Services), Console Porting (PS5), Level Design, Sequencer &amp; Cinematic Animation, Metahuman, Motion Capture</td>
+        </tr>
+        <tr>
+          <td>Other</td>
+          <td>QA Workflow &amp; Bug Tracking, Regression Testing, Scope Management, Playtesting &amp; Iteration, 2D Art (Clip Studio Paint)</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- WORK EXPERIENCE -->
+    <section>
+      <h2>Work Experience</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">Sweaty Chair</span>
+          <span class="entry-date">Nov 2024 – Mar 2025</span>
+        </div>
+        <p class="entry-role">QA Intern &nbsp;·&nbsp; Sydney, NSW</p>
+        <ul>
+          <li>Executed structured test plans across a production game pipeline, identifying and documenting reproducible bugs using internal tracking systems.</li>
+          <li>Performed regression testing to verify bug fixes and maintain build stability across multiple release cycles.</li>
+          <li>Developed hands-on familiarity with Unity and C# through direct production-environment testing.</li>
+          <li>Collaborated with developers and producers to uphold production-quality standards and a strong culture of polish.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">Foot Locker</span>
+          <span class="entry-date">Mar 2022 – Present</span>
+        </div>
+        <p class="entry-role">Sales Associate &nbsp;·&nbsp; Sydney, NSW</p>
+        <ul>
+          <li>Coordinated team workflows to maintain efficient operations in a high-traffic retail environment.</li>
+          <li>Built strong communication, customer service, and interpersonal skills across a diverse team.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+      <h2>Projects</h2>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">Whistle — Open-World Platformer</span>
+          <span class="entry-date">6 months · In Development</span>
+        </div>
+        <p class="entry-role">Unreal Engine 5, Unreal C++, Technical Art, Level Design &nbsp;·&nbsp; Solo (game-side)</p>
+        <ul>
+          <li>Sole programmer, designer, and technical artist on a university team project — owned all game-side development independently.</li>
+          <li>Built a GPU-based foliage tracking system in C++ driving real-time environmental storytelling through reactive plant behaviour.</li>
+          <li>Engineered a Universal Occlusion Mask via a custom material node graph, dynamically keeping the player visible through any obstructing geometry.</li>
+          <li>Designed a modular input buffer system with Enhanced Input integration, coyote time, grind rail, and custom player movement.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">Multiplayer Game Dev — Zero-Gravity Shooter</span>
+          <span class="entry-date">1 trimester · Complete</span>
+        </div>
+        <p class="entry-role">Unreal Engine 5, C++, Epic Online Services &nbsp;·&nbsp; Solo</p>
+        <ul>
+          <li>Designed and built a networked zero-gravity chaos shooter using Epic Online Services for session management and gameplay replication.</li>
+          <li>Diagnosed and resolved desync bugs across multiplayer builds through systematic reproduction, logging, and iteration.</li>
+          <li>Implemented UX feedback systems — hitmarkers, resource meters — to improve player communication and game feel.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">Environmental Design &amp; Creation — Stylized Landscape</span>
+          <span class="entry-date">1 trimester · Complete</span>
+        </div>
+        <p class="entry-role">Unreal Engine 5, Houdini, Blender, Technical Art &nbsp;·&nbsp; Solo</p>
+        <ul>
+          <li>Built a custom GPU-optimised grass pipeline: Houdini → Blender → UE5, with hand-tuned LOD transitions for performance.</li>
+          <li>Implemented Runtime Virtual Textures for dynamic world-colour blending across all environment foliage.</li>
+          <li>Designed a reversed-gravity environment concept with upward-flowing water and inverted root-grown flora.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">3D Character Creation — Layton</span>
+          <span class="entry-date">1 trimester · Complete</span>
+        </div>
+        <p class="entry-role">ZBrush, Maya, Substance Painter, Unreal Engine 5 &nbsp;·&nbsp; Solo</p>
+        <ul>
+          <li>Executed a full DCC character pipeline: concept → ZBrush high-poly sculpt → Maya retopology (ZRemesher) → Substance Painter PBR texturing → UE5 render.</li>
+          <li>Developed a custom cell shader and control rig for stylised in-engine animation.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">Junkyard Drifter — Ubisoft AU/NZ Game Jam 2024</span>
+          <span class="entry-date">2 weeks · Complete</span>
+        </div>
+        <p class="entry-role">Unreal Engine 5 &nbsp;·&nbsp; Solo &nbsp;·&nbsp; <a href="https://andopie.itch.io/junkworld-drifter" target="_blank">andopie.itch.io/junkworld-drifter</a></p>
+        <ul>
+          <li>Designed, built, and shipped a solo skating game in 2 weeks for the Ubisoft AU/NZ 2024 Game Jam.</li>
+          <li>Applied rigorous scope control and playtesting-driven iteration to deliver a complete, polished experience under deadline.</li>
+        </ul>
+      </div>
+
+      <div class="entry">
+        <div class="entry-header">
+          <span class="entry-org">Console Game Dev — PS5 Port</span>
+          <span class="entry-date">Complete</span>
+        </div>
+        <p class="entry-role">Unreal Engine 5, PlayStation 5 &nbsp;·&nbsp; Solo</p>
+        <ul>
+          <li>Ported a hack-and-slash game to PS5, gaining practical experience with console SDK requirements, platform-specific input handling, and certification workflows.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
+    <section>
+      <h2>Education</h2>
+
+      <div class="edu-entry">
+        <div class="entry-header">
+          <span class="entry-org">Academy of Interactive Technology (AIT) &nbsp;·&nbsp; Sydney</span>
+          <span class="entry-date">2023 – 2025</span>
+        </div>
+        <p class="entry-role" style="font-style:normal;">Bachelor of Game Design</p>
+      </div>
+
+      <div class="edu-entry">
+        <div class="entry-header">
+          <span class="entry-org">University of Wollongong</span>
+          <span class="entry-date">2022</span>
+        </div>
+        <p class="entry-role" style="font-style:normal;">Bachelor of Pre-Medicine (discontinued)</p>
+      </div>
+    </section>
+
+  </div><!-- /.body -->
+</div><!-- /.page -->
+</body>
+</html>
