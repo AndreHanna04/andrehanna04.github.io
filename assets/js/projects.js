@@ -41,18 +41,14 @@ const PROJECTS = [
       { src: "assets/images/whistle/4.jpg",               caption: "" },
       { src: "assets/images/whistle/01gUlcOLQCSEQTJPdAElNjJXT4nl5YUlbDSV48-i9iI.gif", caption: "" },
       { src: "assets/images/whistle/2GZtN6Pq7mQRUDCgFcv_R2ewT-FHiZJJRTrop4G5MVc.gif", caption: "" },
-      { src: "assets/images/whistle/3x-71vG6j6XTPEGO5xyzF8TJdkeEFkUSbTPDYMtGjuM.gif", caption: "" },
       { src: "assets/images/whistle/Da81M1y6Zk5cFVbQqPYNMQAk9jLBMyqY2BOra5bsBJI.gif", caption: "" },
       { src: "assets/images/whistle/EESs2jHbn90kUS-Acc9keocp3IU6whZO3HGwySrm2MU.gif", caption: "" },
-      { src: "assets/images/whistle/GL5cPNnOKiEjy428eTPcNjCF5zSY8YuAbBfBr3TITlg.gif", caption: "" },
       { src: "assets/images/whistle/IjTwka4MQCcxwifsSN8Cxrpw65pBWEMXk1aX70FpfL4.gif", caption: "" },
       { src: "assets/images/whistle/mhYQIRVIWvocg-fdcIU_wcABFcH6TrU3Ht3c2og4yWw.gif", caption: "" },
-      { src: "assets/images/whistle/o8NFaVw0PYvgnr3sGNvcjl_8NgbfcuY_FQLPi5x6Tt8.gif", caption: "" },
       { src: "assets/images/whistle/OiFOD-KTtbyR2PC4rugVDMyltDdYmWKSz6HB9Vmoj9I.gif", caption: "" },
       { src: "assets/images/whistle/P3M1S_4M0VJpP75mReH9bpnDcvve3eqmFXs19h6IJnc.gif", caption: "" },
       { src: "assets/images/whistle/PeEEPlzs1k-mvCoHk9kESTXm0DkVJEPl4bB8VNS2FNw.gif", caption: "" },
       { src: "assets/images/whistle/vP6R5I0gDCMroMi6EOgeLpqc-ZqY2uRkk1G0mcCwdQ0.gif", caption: "" },
-      { src: "assets/images/whistle/_akw08fnbUS6Vrp8X4_-aSC4vfPW2v6aDSOZrlj5Uno.gif", caption: "" },
     ],
     details: [
       { label: "Role",   value: "Solo (game side)" },
@@ -161,6 +157,98 @@ const PROJECTS = [
     links: [
       { label: "Play on itch.io ↗", url: "https://andopie.itch.io/junkworld-drifter" },
     ],
+  },
+
+  {
+    id: 5,
+    title: "Environment & Animation Test",
+    summary: "An early UE5 modelling and animation test — something I'm really proud of visually and want to develop further in a future project.",
+    description: `This was a short modelling and animation test I made during my early days of UE5. I'm really proud of the visual design and it's something I would like to pursue and develop in a future project.`,
+    categories: ["environment", "tech-art"],
+    tags: ["Unreal Engine 5", "Environment Art", "Animation"],
+    media: {
+      type: "youtube",
+      src: "https://www.youtube.com/embed/PLcNBPd3bbM",
+    },
+    videos: [
+      { src: "https://www.youtube.com/embed/PLcNBPd3bbM" },
+    ],
+    gallery: [
+      { src: "assets/images/Environment and Animation Test/andre-hanna-screenshot-2023-10-17-155736.jpg", caption: "" },
+      { src: "assets/images/Environment and Animation Test/andre-hanna-screenshot-2023-10-17-155658.jpg", caption: "" },
+      { src: "assets/images/Environment and Animation Test/andre-hanna-screenshot-2023-10-17-155615.jpg", caption: "" },
+      { src: "assets/images/Environment and Animation Test/andre-hanna-screenshot-2023-10-19-163236.jpg", caption: "" },
+      { src: "assets/images/Environment and Animation Test/andre-hanna-screenshot-2023-10-19-163226.jpg", caption: "" },
+    ],
+    details: [
+      { label: "Role",   value: "Solo" },
+      { label: "Engine", value: "Unreal Engine 5" },
+      { label: "Focus",  value: "Environment & Animation" },
+      { label: "Status", value: "Complete" },
+    ],
+    links: [],
+  },
+
+  {
+    id: 6,
+    title: "3D Character Creation — Layton",
+    summary: "A full character creation pipeline from scratch: concept to ZBrush sculpt, Maya retopo, Substance Painter texturing, and Unreal Engine 5 render — inspired by the Persona series.",
+    description: `This collection shows the process behind a 3D character I designed and created from scratch. His name is Layton — inspired by the Persona series, which I had been playing at the time.\n\nThis was a class project completed within a single trimester while learning the full pipeline. I modelled in ZBrush and created a low-poly mesh using ZRemesher and Maya. I then imported it into Adobe Substance Painter 3D to texture it before rendering in Unreal Engine 5.\n\nI feel a lot more familiar with my tools now and much more comfortable with this kind of work.`,
+    categories: ["tech-art"],
+    tags: ["ZBrush", "Maya", "Substance Painter", "Unreal Engine 5"],
+    media: {
+      type: "youtube",
+      src: "https://www.youtube.com/embed/8SZgmuAD4Tc",
+    },
+    videos: [
+      { src: "https://www.youtube.com/embed/8SZgmuAD4Tc" },
+    ],
+    gallery: [
+      { src: "assets/images/3D Character Creation/andre-hanna-render.jpg",                    caption: "Final render" },
+      { src: "assets/images/3D Character Creation/andre-hanna-ortho.jpg",                     caption: "Orthographic view" },
+      { src: "assets/images/3D Character Creation/andre-hanna-screenshot-2024-05-07-181156.jpg", caption: "" },
+      { src: "assets/images/3D Character Creation/andre-hanna-screenshot-2024-03-17-234314.jpg", caption: "" },
+      { src: "assets/images/3D Character Creation/andre-hanna-screenshot-2024-02-07-195321.jpg", caption: "" },
+    ],
+    details: [
+      { label: "Role",   value: "Solo" },
+      { label: "Tools",  value: "ZBrush, Maya, Substance Painter, UE5" },
+      { label: "Focus",  value: "Character Creation" },
+      { label: "Status", value: "Complete" },
+    ],
+    links: [
+      { label: "View on Sketchfab ↗", url: "https://sketchfab.com/3d-models/persona-style-character-with-eyes-7cb73197072d443f9e97108d7fc7a14d" },
+    ],
+  },
+
+  {
+    id: 7,
+    title: "Of Rust",
+    summary: "My very first Unreal Engine project — I made a lot of mistakes, but it was a fun experience and I'm really glad I made it.",
+    description: `This was the first ever project I did to learn Unreal Engine. I made a lot of mistakes in it and I know better now — but overall it was a fun experience and I'm really glad I made it.`,
+    categories: ["environment", "gameplay"],
+    tags: ["Unreal Engine 5", "First Project", "Environment"],
+    media: {
+      type: "youtube",
+      src: "https://www.youtube.com/embed/3keUk2p77mE",
+    },
+    videos: [
+      { src: "https://www.youtube.com/embed/3keUk2p77mE" },
+    ],
+    gallery: [
+      { src: "assets/images/Of Rust/yt-gif-9m08s-9m13s.gif",                          caption: "" },
+      { src: "assets/images/Of Rust/andre-hanna-screenshot-2023-08-20-220651.jpg",     caption: "" },
+      { src: "assets/images/Of Rust/andre-hanna-screenshot-2023-08-20-220942.jpg",     caption: "" },
+      { src: "assets/images/Of Rust/andre-hanna-screenshot-2023-08-19-002537.jpg",     caption: "" },
+      { src: "assets/images/Of Rust/andre-hanna-screenshot-2023-08-20-220624.jpg",     caption: "" },
+    ],
+    details: [
+      { label: "Role",   value: "Solo" },
+      { label: "Engine", value: "Unreal Engine 5" },
+      { label: "Focus",  value: "Learning Project" },
+      { label: "Status", value: "Complete" },
+    ],
+    links: [],
   },
 
   // ---- ADD MORE PROJECTS BELOW ----
@@ -317,7 +405,11 @@ function openModal(project) {
   document.body.style.overflow = 'hidden';
 }
 
+const _colorCache = {};
+
 function extractModalColor(src, cb) {
+  if (_colorCache[src]) { cb(..._colorCache[src]); return; }
+
   const img = new Image();
   img.crossOrigin = 'anonymous';
   img.onload = () => {
@@ -350,7 +442,6 @@ function extractModalColor(src, cb) {
       let fG = Math.round(bestG * t + avgG * (1 - t));
       let fB = Math.round(bestB * t + avgB * (1 - t));
 
-      // Boost if too dark to read on the dark modal background
       const luma = fR * 0.299 + fG * 0.587 + fB * 0.114;
       if (luma < 90) {
         const boost = 90 / Math.max(luma, 1);
@@ -359,6 +450,7 @@ function extractModalColor(src, cb) {
         fB = Math.min(255, Math.round(fB * boost));
       }
 
+      _colorCache[src] = [fR, fG, fB];
       cb(fR, fG, fB);
     } catch { cb(null); }
   };

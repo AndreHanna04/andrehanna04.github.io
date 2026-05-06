@@ -1,0 +1,47 @@
+PROJECT 1
+
+Title: Environment and Animation Test
+
+Description: This was a short Modelling and animation test I made during my early days of UE5. I'm really proud of the visual design and it's something I would like to pursue develop in a future project.
+
+Video: https://youtu.be/PLcNBPd3bbM
+
+
+PROJECT 2
+
+Title: 3D Character Creation Process
+
+Description: This collection aims to show a little bit about a 3D character a designed and created from scratch. His name is Layton. I was inspired by the persona series which I had been playing at the time. This was a project I undertook for class and did this all in a trimester while learning the process. I feel a lot more familiar with my tools now and I'm much more comfortable with this. I modelled it in zbrush and created a low poly using z-remesher and maya. I then Imported it into adobe substance painter 3d to texture it before rendering it In unreal engine 5.
+
+Links: https://youtu.be/8SZgmuAD4Tc   https://sketchfab.com/3d-models/persona-style-character-with-eyes-7cb73197072d443f9e97108d7fc7a14d
+
+
+PROJECT 3
+
+Title: Of Rust
+
+Description:  This was the first ever project I did to learn unreal engine. I made a lot of mistakes in it and I know better now but overall, it's a fun experience and I'm really glad I made it.
+
+Links:  https://youtu.be/3keUk2p77mE
+
+
+
+
+Personal Links:
+
+Itchio: https://www.artstation.com/andrehanna9
+
+GitHub: https://github.com/AndreHanna04
+
+LinkedIn: https://www.linkedin.com/in/andre-hanna-8a0a04259/
+
+Artstation: https://andopie.itch.io/
+
+
+
+
+
+
+Why I chose Games:
+
+Initially, the plan I had for my life was to become a doctor and so, after highschool, I went into pre-medicine. But after a year of that, I found myself hating the way they taught it. Growing up, I'd always played and been drawn to games, I would find any excuse in school to use scratch to do my work and I daydreamed of game design. I'd always had a strong head for logic, math and critical thinking and so I thought, why not try and make something special. I've played games of all Genres, from JRPG's, to indie bullet hells, AAA action games, Fighting games, Competitive shooters and Visual Novels. I've experienced so many corners of the gaming world and I feel so strongly that there are still so many more experiences to make, and thus, I am here.
