@@ -312,6 +312,7 @@ function openModal(project) {
     });
   }
 
+  modal.scrollTop = 0;
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
 }

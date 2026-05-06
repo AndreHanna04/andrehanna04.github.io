@@ -81,11 +81,43 @@ overlay.addEventListener('click', (e) => {
 });
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') closeModal();
+  if (e.key === 'Escape') {
+    if (lightbox.classList.contains('open')) closeLightbox();
+    else closeModal();
+  }
+});
+
+// ---- LIGHTBOX ----
+const lightbox     = document.getElementById('lightbox');
+const lightboxImg  = document.getElementById('lightboxImg');
+const lightboxClose = document.getElementById('lightboxClose');
+
+function openLightbox(src, alt) {
+  lightboxImg.src = src;
+  lightboxImg.alt = alt || '';
+  lightbox.classList.add('open');
+}
+
+function closeLightbox() {
+  lightbox.classList.remove('open');
+  lightboxImg.src = '';
+}
+
+lightboxClose.addEventListener('click', closeLightbox);
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+// Delegate gallery clicks — works on dynamically generated items
+document.addEventListener('click', (e) => {
+  const item = e.target.closest('.gallery-item');
+  if (!item) return;
+  const img = item.querySelector('img');
+  if (img) openLightbox(img.src, img.alt);
 });
 
 // ---- SCROLL REVEAL ----
-const reveals = document.querySelectorAll('.section-header, .skill-group, .about-grid, .contact-form, .social-links, .contact-intro');
+const reveals = document.querySelectorAll('.section-header, .skill-group, .about-grid, .social-links, .contact-intro, .contact-email-btn');
 
 reveals.forEach(el => el.classList.add('reveal'));
 
@@ -100,46 +132,3 @@ const revealObserver = new IntersectionObserver((entries) => {
 
 reveals.forEach(el => revealObserver.observe(el));
 
-// ---- CONTACT FORM ----
-// Uses Formspree — sign up free at formspree.io, create a form,
-// then replace the URL below with your own endpoint.
-const FORMSPREE_ENDPOINT = 'https://formspree.io/f/mjglyapp';
-
-const contactForm = document.getElementById('contactForm');
-const formStatus  = document.getElementById('formStatus');
-
-if (contactForm) {
-  contactForm.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const btn = contactForm.querySelector('button[type="submit"]');
-    btn.textContent = 'Sending…';
-    btn.disabled = true;
-    formStatus.textContent = '';
-
-    const data = {
-      name:    document.getElementById('name').value,
-      email:   document.getElementById('email').value,
-      message: document.getElementById('message').value,
-    };
-
-    try {
-      const res = await fetch(FORMSPREE_ENDPOINT, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      if (res.ok) {
-        formStatus.textContent = '✓ Message sent — I\'ll get back to you soon!';
-        contactForm.reset();
-      } else {
-        formStatus.textContent = 'Something went wrong. Try emailing me directly.';
-      }
-    } catch {
-      formStatus.textContent = 'Network error. Try emailing me directly.';
-    }
-
-    btn.textContent = 'Send Message';
-    btn.disabled = false;
-  });
-}

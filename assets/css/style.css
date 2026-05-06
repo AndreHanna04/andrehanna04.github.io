@@ -2,6 +2,14 @@
    PORTFOLIO — CLEAN MINIMAL STYLE
    ========================================= */
 
+@font-face {
+  font-family: 'Lemon Milk';
+  src: url('../images/Generic/LEMONMILK-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   --cream:     #151515;
   --off-white: #111111;
@@ -12,8 +20,8 @@
   --accent:    #d4d0c8;
   --highlight: #c8b89a;
 
-  --font-serif: 'DM Serif Display', Georgia, serif;
-  --font-sans:  'DM Sans', system-ui, sans-serif;
+  --font-serif: 'Lemon Milk', Georgia, serif;
+  --font-sans:  'Nunito', system-ui, sans-serif;
 
   --radius-sm: 6px;
   --radius-md: 12px;
@@ -292,8 +300,8 @@ ul { list-style: none; }
 }
 
 .hero-title em {
-  font-style: italic;
-  color: var(--mid);
+  font-style: normal;
+  color: var(--highlight);
 }
 
 .hero-sub {
@@ -594,6 +602,13 @@ ul { list-style: none; }
 /* =========================================
    CONTACT
    ========================================= */
+
+.contact-email-btn {
+  display: inline-flex;
+  margin-bottom: 3rem;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+}
 
 .contact-intro {
   color: var(--mid);
@@ -972,4 +987,62 @@ ul { list-style: none; }
 
 @media (max-width: 480px) {
   .skills-grid { grid-template-columns: 1fr; }
+  .modal-gallery {
+    grid-template-columns: 1fr;
+    padding: 1rem 1rem 1.5rem;
+  }
 }
+
+/* =========================================
+   LIGHTBOX
+   ========================================= */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.93);
+  z-index: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease;
+  cursor: zoom-out;
+}
+
+.lightbox.open {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.lightbox-img {
+  max-width: 100%;
+  max-height: 90svh;
+  object-fit: contain;
+  border-radius: var(--radius-md);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+  cursor: default;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  color: #fff;
+  backdrop-filter: blur(6px);
+  transition: background var(--transition);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightbox-close:hover { background: rgba(255,255,255,0.2); }

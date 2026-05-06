@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="assets/css/style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 </head>
 <body>
 
@@ -144,9 +144,7 @@
       </div>
       <div class="about-grid">
         <div class="about-photo-wrap">
-          <div class="about-photo-placeholder">
-            <span>Your Photo</span>
-          </div>
+          <img src="assets/images/Generic/photo.jpg" alt="Andre Hanna" />
         </div>
         <div class="about-text">
           <p>
@@ -172,26 +170,9 @@
         <h2 class="section-title">Let's talk</h2>
       </div>
       <p class="contact-intro">
-        I'm actively looking for roles in game programming, technical art, or design — and open to freelance projects. Drop me a message or find me on the platforms below.
+        I'm actively looking for roles in game programming, technical art, or design — and open to freelance projects. Shoot me an email or find me on the platforms below.
       </p>
-      <form class="contact-form" id="contactForm">
-        <div class="form-row">
-          <div class="form-field">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Your name" required />
-          </div>
-          <div class="form-field">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="you@example.com" required />
-          </div>
-        </div>
-        <div class="form-field">
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Tell me about your project or opportunity..." required></textarea>
-        </div>
-<button type="submit" class="btn btn-primary">Send Message</button>
-        <p class="form-status" id="formStatus"></p>
-      </form>
+      <a href="mailto:andrehanna49@gmail.com" class="btn btn-primary contact-email-btn">andrehanna49@gmail.com →</a>
       <div class="social-links">
         <a href="https://github.com/yourusername" target="_blank" class="social-link">GitHub</a>
         <a href="https://linkedin.com/in/yourprofile" target="_blank" class="social-link">LinkedIn</a>
@@ -222,6 +203,12 @@
       <div id="modalGallery"></div>
       </div>
     </div>
+  </div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">✕</button>
+    <img class="lightbox-img" id="lightboxImg" src="" alt="" />
   </div>
 
   <script src="assets/js/projects.js"></script>
