@@ -21,6 +21,9 @@ const PROJECTS = [
       type: "youtube",
       src: "https://www.youtube.com/embed/PZnZo3tKxfw",
     },
+    videos: [
+      { src: "https://www.youtube.com/embed/PZnZo3tKxfw" },
+    ],
     gallery: [
       { src: "assets/images/whistle/Whistle.gif",         caption: "Whistle" },
       { src: "assets/images/whistle/GrowingPlats.gif",    caption: "Growing platforms" },
@@ -71,6 +74,10 @@ const PROJECTS = [
       type: "youtube",
       src: "https://www.youtube.com/embed/VNVvwwr9Nx4",
     },
+    videos: [
+      { label: "Video 1", src: "https://www.youtube.com/embed/VNVvwwr9Nx4" },
+      { label: "Video 2", src: "https://www.youtube.com/embed/4Qj8tVVD5Mo" },
+    ],
     gallery: [
       { src: "assets/images/Environmental Design and creation/HighresScreenshot00000.png",                     caption: "" },
       { src: "assets/images/Environmental Design and creation/HighresScreenshot00001.png",                     caption: "" },
@@ -88,10 +95,7 @@ const PROJECTS = [
       { label: "Tools",  value: "Houdini, Blender" },
       { label: "Status", value: "Complete" },
     ],
-    links: [
-      { label: "Video 1 ↗", url: "https://youtu.be/VNVvwwr9Nx4" },
-      { label: "Video 2 ↗", url: "https://youtu.be/4Qj8tVVD5Mo" },
-    ],
+    links: [],
   },
 
   {
@@ -105,6 +109,9 @@ const PROJECTS = [
       type: "youtube",
       src: "https://www.youtube.com/embed/nHpZx92GBIo",
     },
+    videos: [
+      { src: "https://www.youtube.com/embed/nHpZx92GBIo" },
+    ],
     gallery: [
       { src: "assets/images/Multiplayer Game Dev/andre-hanna-recording-2024-10-30-094029.gif", caption: "" },
       { src: "assets/images/Multiplayer Game Dev/andre-hanna-recording-2024-10-30-093416.gif", caption: "" },
@@ -119,9 +126,7 @@ const PROJECTS = [
       { label: "Focus",  value: "Online Multiplayer" },
       { label: "Status", value: "Complete" },
     ],
-    links: [
-      { label: "Watch ↗", url: "https://youtu.be/nHpZx92GBIo" },
-    ],
+    links: [],
   },
 
   {
@@ -135,6 +140,9 @@ const PROJECTS = [
       type: "youtube",
       src: "https://www.youtube.com/embed/W3cAsmOqk2A",
     },
+    videos: [
+      { src: "https://www.youtube.com/embed/W3cAsmOqk2A" },
+    ],
     gallery: [
       { src: "assets/images/Junkyard Drifter/yt-gif-0m00s-0m02s.gif",                       caption: "" },
       { src: "assets/images/Junkyard Drifter/yt-gif-1m00s-1m05s.gif",                       caption: "" },
@@ -152,7 +160,6 @@ const PROJECTS = [
     ],
     links: [
       { label: "Play on itch.io ↗", url: "https://andopie.itch.io/junkworld-drifter" },
-      { label: "Watch ↗",           url: "https://youtu.be/W3cAsmOqk2A" },
     ],
   },
 
@@ -243,27 +250,119 @@ function buildGallery(gallery) {
 }
 
 function openModal(project) {
+  const modal = document.getElementById('modal');
+
+  // Reset accent colour from any previous project
+  modal.style.removeProperty('--modal-accent');
+  modal.style.removeProperty('--modal-accent-dim');
+
   document.getElementById('modalTitle').textContent = project.title;
-  document.getElementById('modalDesc').textContent = project.description;
+  document.getElementById('modalDesc').textContent  = project.description;
 
   document.getElementById('modalTags').innerHTML = project.tags
     .map(t => `<span class="tag">${t}</span>`).join('');
 
-  document.getElementById('modalMedia').innerHTML = buildThumb(project.media, 'modal');
+  // ---- Video cycling ----
+  const videos = project.videos || [];
+  let currentVideo = 0;
+
+  function renderVideo(idx) {
+    const v       = videos[idx];
+    const mediaEl = document.getElementById('modalMedia');
+    const showNav = videos.length > 1;
+    mediaEl.innerHTML = `
+      <iframe src="${v.src}?autoplay=1" frameborder="0" allowfullscreen allow="autoplay"></iframe>
+      ${showNav ? `<div class="modal-video-nav">
+        <span class="modal-video-count">${idx + 1} / ${videos.length}${v.label ? ' — ' + v.label : ''}</span>
+        <button class="modal-video-next">Next video →</button>
+      </div>` : ''}
+    `;
+    if (showNav) {
+      mediaEl.querySelector('.modal-video-next').addEventListener('click', () => {
+        currentVideo = (currentVideo + 1) % videos.length;
+        renderVideo(currentVideo);
+      });
+    }
+  }
+
+  if (videos.length > 0) {
+    renderVideo(0);
+  } else {
+    document.getElementById('modalMedia').innerHTML = buildThumb(project.media, 'modal');
+  }
 
   document.getElementById('modalDetails').innerHTML = (project.details || [])
     .map(d => `<div class="modal-detail-item"><label>${d.label}</label><span>${d.value}</span></div>`)
     .join('');
 
   document.getElementById('modalLinks').innerHTML = (project.links || [])
-    .map(l => `<a href="${l.url}" target="_blank" rel="noopener" class="btn btn-ghost">${l.label} ↗</a>`)
+    .map(l => `<a href="${l.url}" target="_blank" rel="noopener" class="btn btn-ghost">${l.label}</a>`)
     .join('');
 
   const galleryEl = document.getElementById('modalGallery');
   if (galleryEl) galleryEl.innerHTML = buildGallery(project.gallery);
 
+  // ---- Dynamic accent colour from first non-GIF gallery image ----
+  const firstImg = (project.gallery || []).find(g => !g.src.match(/\.gif$/i));
+  if (firstImg) {
+    extractModalColor(firstImg.src, (r, g, b) => {
+      if (r === null) return;
+      modal.style.setProperty('--modal-accent', `rgb(${r},${g},${b})`);
+      modal.style.setProperty('--modal-accent-dim', `rgba(${r},${g},${b},0.12)`);
+    });
+  }
+
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow = 'hidden';
+}
+
+function extractModalColor(src, cb) {
+  const img = new Image();
+  img.crossOrigin = 'anonymous';
+  img.onload = () => {
+    try {
+      const SIZE = 64;
+      const canvas = document.createElement('canvas');
+      canvas.width = SIZE; canvas.height = SIZE;
+      const ctx = canvas.getContext('2d');
+      ctx.drawImage(img, 0, 0, SIZE, SIZE);
+      const { data } = ctx.getImageData(0, 0, SIZE, SIZE);
+
+      let sumR = 0, sumG = 0, sumB = 0, count = 0;
+      let bestSat = 0, bestR = 0, bestG = 0, bestB = 0;
+
+      for (let i = 0; i < data.length; i += 4) {
+        const r = data[i], g = data[i + 1], b = data[i + 2];
+        const luma = r * 0.299 + g * 0.587 + b * 0.114;
+        if (luma < 20 || luma > 240) continue;
+        sumR += r; sumG += g; sumB += b; count++;
+        const max = Math.max(r, g, b), min = Math.min(r, g, b);
+        const sat = max === 0 ? 0 : (max - min) / max;
+        if (sat > bestSat) { bestSat = sat; bestR = r; bestG = g; bestB = b; }
+      }
+
+      if (count === 0) { cb(null); return; }
+
+      const avgR = sumR / count, avgG = sumG / count, avgB = sumB / count;
+      const t = bestSat > 0.2 ? 0.7 : 0;
+      let fR = Math.round(bestR * t + avgR * (1 - t));
+      let fG = Math.round(bestG * t + avgG * (1 - t));
+      let fB = Math.round(bestB * t + avgB * (1 - t));
+
+      // Boost if too dark to read on the dark modal background
+      const luma = fR * 0.299 + fG * 0.587 + fB * 0.114;
+      if (luma < 90) {
+        const boost = 90 / Math.max(luma, 1);
+        fR = Math.min(255, Math.round(fR * boost));
+        fG = Math.min(255, Math.round(fG * boost));
+        fB = Math.min(255, Math.round(fB * boost));
+      }
+
+      cb(fR, fG, fB);
+    } catch { cb(null); }
+  };
+  img.onerror = () => cb(null);
+  img.src = src;
 }
 
 renderProjects();
