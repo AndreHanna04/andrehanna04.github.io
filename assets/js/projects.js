@@ -296,6 +296,37 @@ const PROJECTS = [
     links: [],
   },
 
+  {
+    id: 8,
+    title: "Game Design Showcase",
+    summary: "A puzzle-shooter hybrid built for a class project — featuring a custom puzzle system with designer tooling, and an Endoparasitic-inspired per-bullet manual reload mechanic.",
+    description: `This showcases some game design choices I made while working on a class project. We needed to make a shooter but I decided to add puzzle elements and designed an entire puzzle system and created tools so that my groupmates could also create their own puzzles. I had to make player experience choices and I tried to make the puzzle system as intriguing as possible without allowing blind trial and error.\n\nI also created a cool reload system inspired by Endoparasitic where each bullet needs to be reloaded individually.`,
+    categories: ["gameplay", "programming"],
+    tags: ["Unreal Engine 5", "Game Design", "C++", "Systems Design"],
+    media: {
+      type: "youtube",
+      src: "https://www.youtube.com/embed/gM-z936xKCk",
+    },
+    videos: [
+      { label: "Puzzle System", src: "https://www.youtube.com/embed/gM-z936xKCk" },
+      { label: "Reload System", src: "https://www.youtube.com/embed/bnAExn0J0NY" },
+    ],
+    gallery: [],
+    highlights: [
+      "Designed a full puzzle system with custom editor tooling for teammates",
+      "Per-bullet manual reload mechanic inspired by Endoparasitic",
+      "Player experience design focused on eliminating blind trial and error",
+      "Shooter/puzzle hybrid — extended a class brief into a distinct design direction",
+    ],
+    details: [
+      { label: "Role",   value: "Designer & Programmer" },
+      { label: "Engine", value: "Unreal Engine 5" },
+      { label: "Focus",  value: "Game Design, Systems Design" },
+      { label: "Status", value: "Complete" },
+    ],
+    links: [],
+  },
+
   // ---- ADD MORE PROJECTS BELOW ----
 ];
 

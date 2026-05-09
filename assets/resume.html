@@ -115,6 +115,33 @@
       flex-shrink: 0;
     }
 
+    .contact-item--primary {
+      color: var(--accent) !important;
+      font-weight: 700;
+      font-size: 9.5pt;
+      letter-spacing: 0.03em;
+      background: rgba(200, 184, 154, 0.12);
+      padding: 2px 9px 2px 6px;
+      border-radius: 20px;
+      border: 1px solid rgba(200, 184, 154, 0.35);
+    }
+
+    .contact-item--primary::before {
+      width: 5px;
+      height: 5px;
+    }
+
+    .contact-item--secondary {
+      color: #666 !important;
+      font-size: 8pt;
+    }
+
+    .contact-item--secondary::before {
+      background: #666;
+      width: 3px;
+      height: 3px;
+    }
+
     /* =====================================================
        ACCENT BAR
        ===================================================== */
@@ -205,6 +232,7 @@
       padding-left: 10px;
       border-left: 2px solid var(--rule);
       transition: border-color 0.2s;
+      break-inside: avoid;
     }
 
     .entry:hover {
@@ -276,6 +304,37 @@
       margin-bottom: 7px;
       padding-left: 10px;
       border-left: 2px solid var(--rule);
+      break-inside: avoid;
+    }
+
+    /* =====================================================
+       PRINT
+       ===================================================== */
+
+    /* =====================================================
+       FOOTER — fixed so Chrome repeats it on every page
+       ===================================================== */
+
+    .resume-footer {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 28px;
+      background: var(--dark);
+      border-top: 2px solid var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 30px;
+      font-size: 7.5pt;
+      color: #555;
+    }
+
+    .resume-footer a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
     }
 
     /* =====================================================
@@ -299,14 +358,14 @@
       <div class="header-name">Andre Hanna</div>
       <div class="header-title">Game Designer &nbsp;·&nbsp; Programmer &nbsp;·&nbsp; Technical Artist</div>
       <div class="contact-grid">
+        <a class="contact-item contact-item--primary" href="https://andrehanna.site" target="_blank">andrehanna.site</a>
         <span class="contact-item">0490 128 950</span>
         <a class="contact-item" href="mailto:andrehanna49@gmail.com">andrehanna49@gmail.com</a>
-        <span class="contact-item">Beverly Hills, NSW</span>
-        <a class="contact-item" href="https://andrehanna04.github.io" target="_blank">andrehanna04.github.io</a>
-        <a class="contact-item" href="https://www.linkedin.com/in/andre-hanna-8a0a04259/" target="_blank">LinkedIn</a>
-        <a class="contact-item" href="https://github.com/AndreHanna04" target="_blank">GitHub</a>
-        <a class="contact-item" href="https://www.artstation.com/andrehanna9" target="_blank">ArtStation</a>
-        <a class="contact-item" href="https://andopie.itch.io/" target="_blank">itch.io</a>
+        <span class="contact-item">Sydney, Australia</span>
+        <a class="contact-item contact-item--secondary" href="https://www.linkedin.com/in/andre-hanna-8a0a04259/" target="_blank">LinkedIn</a>
+        <a class="contact-item contact-item--secondary" href="https://github.com/AndreHanna04" target="_blank">GitHub</a>
+        <a class="contact-item contact-item--secondary" href="https://www.artstation.com/andrehanna9" target="_blank">ArtStation</a>
+        <a class="contact-item contact-item--secondary" href="https://andopie.itch.io/" target="_blank">itch.io</a>
       </div>
     </div>
   </header>
@@ -314,7 +373,7 @@
   <div class="accent-bar"></div>
 
   <!-- ===== BODY ===== -->
-  <div class="body">
+  <div class="body" style="padding-bottom: 48px;">
 
     <!-- SUMMARY -->
     <section>
@@ -360,7 +419,7 @@
           <span class="entry-org">Sweaty Chair</span>
           <span class="entry-date">Nov 2024 – Mar 2025</span>
         </div>
-        <p class="entry-role">QA Intern &nbsp;·&nbsp; Sydney, NSW</p>
+        <p class="entry-role">QA Intern &nbsp;·&nbsp; Sydney, Australia</p>
         <ul>
           <li>Executed structured test plans across a production game pipeline, identifying and documenting reproducible bugs using internal tracking systems.</li>
           <li>Performed regression testing to verify bug fixes and maintain build stability across multiple release cycles.</li>
@@ -374,7 +433,7 @@
           <span class="entry-org">Foot Locker</span>
           <span class="entry-date">Mar 2022 – Present</span>
         </div>
-        <p class="entry-role">Sales Associate &nbsp;·&nbsp; Sydney, NSW</p>
+        <p class="entry-role">Sales Associate &nbsp;·&nbsp; Sydney, Australia</p>
         <ul>
           <li>Coordinated team workflows to maintain efficient operations in a high-traffic retail environment.</li>
           <li>Built strong communication, customer service, and interpersonal skills across a diverse team.</li>
@@ -484,6 +543,13 @@
     </section>
 
   </div><!-- /.body -->
+
+  <!-- ===== FOOTER — repeats on every printed page ===== -->
+  <footer class="resume-footer">
+    <span>Andre Hanna &nbsp;·&nbsp; Game Designer, Programmer &amp; Technical Artist</span>
+    <a href="https://andrehanna.site" target="_blank">andrehanna.site</a>
+  </footer>
+
 </div><!-- /.page -->
 </body>
 </html>
