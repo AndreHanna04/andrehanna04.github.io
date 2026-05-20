@@ -10,309 +10,351 @@
        Paper: A4 · Margins: None · Background graphics: ON
        ===================================================== */
 
-    @page {
-      size: A4;
-      margin: 0;
-    }
+    @page { size: A4; margin: 0; }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --dark:    #141414;
-      --mid:     #1e1e1e;
-      --accent:  #c8b89a;
-      --text:    #1a1a1a;
-      --muted:   #555;
-      --rule:    #ddd;
+      --dark:      #0d1117;
+      --dark2:     #161b22;
+      --accent:    #1de9b6;
+      --accent2:   #00b896;
+      --white:     #ffffff;
+      --text:      #1a1a2e;
+      --muted:     #6b7280;
+      --rule:      #e5e7eb;
+      --tag-bg:    rgba(29,233,182,0.1);
+      --tag-bd:    rgba(29,233,182,0.28);
+      --sb-w:      70mm;
     }
 
     body {
-      font-family: 'Calibri', 'Arial', 'Helvetica', sans-serif;
-      font-size: 10pt;
+      font-family: 'Calibri', 'Segoe UI', Arial, sans-serif;
+      font-size: 9pt;
       color: var(--text);
-      background: #fff;
+      background: var(--white);
       line-height: 1.5;
     }
 
     .page {
       width: 210mm;
       min-height: 297mm;
-      margin: 0 auto;
-      background: #fff;
+      display: flex;
+      position: relative;
+      background: var(--white);
     }
 
     /* =====================================================
-       HEADER
+       SIDEBAR
        ===================================================== */
 
-    .header {
+    .sidebar {
+      width: var(--sb-w);
+      min-height: 297mm;
       background: var(--dark);
-      padding: 26px 30px;
+      /* subtle dot-grid texture */
+      background-image: radial-gradient(rgba(255,255,255,0.05) 1px, transparent 1px);
+      background-size: 18px 18px;
+      padding: 26px 18px 36px;
+      flex-shrink: 0;
       display: flex;
-      align-items: center;
-      gap: 24px;
+      flex-direction: column;
+      gap: 18px;
     }
 
-    .header-photo {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
+    /* ── Identity ── */
+    .identity {
+      padding-bottom: 16px;
+      border-bottom: 1px solid rgba(29,233,182,0.2);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      text-align: center;
+    }
+
+    .photo {
+      width: 80px;
+      height: 80px;
       object-fit: cover;
       object-position: center top;
-      border: 3px solid var(--accent);
+      border-radius: 4px;
+      border: 2px solid var(--accent);
       flex-shrink: 0;
     }
 
-    .header-info {
-      flex: 1;
-    }
-
-    .header-name {
-      font-size: 26pt;
-      font-weight: 700;
-      color: #f0ede8;
-      letter-spacing: 0.04em;
+    .name-first {
+      display: block;
+      font-size: 19pt;
+      font-weight: 900;
+      color: var(--white);
       text-transform: uppercase;
-      line-height: 1.05;
-      margin-bottom: 4px;
+      letter-spacing: 0.06em;
+      line-height: 1;
     }
 
-    .header-title {
-      font-size: 8.5pt;
+    .name-last {
+      display: block;
+      font-size: 19pt;
+      font-weight: 900;
       color: var(--accent);
-      letter-spacing: 0.2em;
       text-transform: uppercase;
-      margin-bottom: 12px;
+      letter-spacing: 0.06em;
+      line-height: 1;
+      margin-bottom: 7px;
     }
 
-    .contact-grid {
+    .title-line {
+      font-size: 6.5pt;
+      color: rgba(255,255,255,0.5);
+      text-transform: uppercase;
+      letter-spacing: 0.17em;
+      line-height: 1.75;
+    }
+
+    .tagline {
+      font-size: 7.5pt;
+      color: var(--accent);
+      font-style: italic;
+      opacity: 0.72;
+      margin-top: 5px;
+    }
+
+    /* ── Sidebar blocks ── */
+    .sb-block {
       display: flex;
-      flex-wrap: wrap;
-      column-gap: 16px;
-      row-gap: 3px;
-      font-size: 8.5pt;
-      color: #888;
+      flex-direction: column;
+      gap: 7px;
     }
 
-    .contact-grid a {
-      color: #aaa;
+    .sb-heading {
+      font-size: 6pt;
+      font-weight: 700;
+      letter-spacing: 0.26em;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding-bottom: 4px;
+      border-bottom: 1px solid rgba(29,233,182,0.18);
+    }
+
+    /* Contact */
+    .c-row {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.62);
+      line-height: 1.4;
+    }
+
+    .c-row a {
+      color: rgba(255,255,255,0.62);
       text-decoration: none;
     }
 
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 5px;
-    }
-
-    .contact-item::before {
-      content: '';
-      display: inline-block;
-      width: 4px;
-      height: 4px;
-      border-radius: 50%;
-      background: var(--accent);
+    .c-icon {
+      width: 14px;
+      text-align: center;
+      color: var(--accent);
+      font-size: 8.5pt;
       flex-shrink: 0;
+      font-style: normal;
     }
 
-    .contact-item--primary {
-      color: var(--accent) !important;
+    /* Skills */
+    .skill-cat { margin-bottom: 5px; }
+
+    .skill-cat-label {
+      font-size: 6.5pt;
       font-weight: 700;
-      font-size: 9.5pt;
-      letter-spacing: 0.03em;
-      background: rgba(200, 184, 154, 0.12);
-      padding: 2px 9px 2px 6px;
-      border-radius: 20px;
-      border: 1px solid rgba(200, 184, 154, 0.35);
+      color: rgba(255,255,255,0.38);
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      margin-bottom: 2px;
     }
 
-    .contact-item--primary::before {
-      width: 5px;
-      height: 5px;
+    .skill-cat-vals {
+      font-size: 7.5pt;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.55;
     }
 
-    .contact-item--secondary {
-      color: #666 !important;
-      font-size: 8pt;
-    }
+    /* Education */
+    .edu-row { margin-bottom: 7px; }
 
-    .contact-item--secondary::before {
-      background: #666;
-      width: 3px;
-      height: 3px;
-    }
-
-    /* =====================================================
-       ACCENT BAR
-       ===================================================== */
-
-    .accent-bar {
-      height: 4px;
-      background: linear-gradient(90deg, var(--accent) 0%, transparent 100%);
-    }
-
-    /* =====================================================
-       BODY
-       ===================================================== */
-
-    .body {
-      padding: 20px 30px 28px;
-    }
-
-    /* =====================================================
-       SECTIONS
-       ===================================================== */
-
-    section {
-      margin-bottom: 14px;
-    }
-
-    h2 {
+    .edu-deg {
       font-size: 7.5pt;
       font-weight: 700;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      color: var(--accent);
+      color: rgba(255,255,255,0.82);
+      line-height: 1.3;
+    }
+
+    .edu-school {
+      font-size: 7pt;
+      color: var(--accent2);
+      margin-top: 1px;
+    }
+
+    .edu-yr {
+      font-size: 6.5pt;
+      color: rgba(255,255,255,0.28);
+    }
+
+    /* =====================================================
+       MAIN
+       ===================================================== */
+
+    .main {
+      flex: 1;
+      padding: 26px 22px 44px 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      background: var(--white);
+    }
+
+    /* Section heading with counter + rule */
+    .sec-head {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
       margin-bottom: 9px;
     }
 
-    h2::after {
-      content: '';
+    .sec-num {
+      font-size: 6.5pt;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.05em;
+      flex-shrink: 0;
+    }
+
+    .sec-title {
+      font-size: 7pt;
+      font-weight: 700;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--text);
+      flex-shrink: 0;
+    }
+
+    .sec-rule {
       flex: 1;
       height: 1px;
       background: var(--rule);
     }
 
-    /* =====================================================
-       SUMMARY
-       ===================================================== */
-
-    .summary-text {
-      font-size: 9.5pt;
-      color: #333;
-      line-height: 1.65;
+    /* About */
+    .about-text {
+      font-size: 8.5pt;
+      color: #374151;
+      line-height: 1.72;
     }
 
-    /* =====================================================
-       SKILLS
-       ===================================================== */
-
-    .skills-table {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .skills-table td {
-      padding: 2.5px 0;
-      font-size: 9pt;
-      vertical-align: top;
-    }
-
-    .skills-table td:first-child {
-      font-weight: 700;
-      color: var(--text);
-      width: 160px;
-      padding-right: 12px;
-      white-space: nowrap;
-    }
-
-    .skills-table td:last-child {
-      color: var(--muted);
-    }
-
-    /* =====================================================
-       ENTRIES
-       ===================================================== */
-
+    /* Entries */
     .entry {
-      margin-bottom: 11px;
-      padding-left: 10px;
-      border-left: 2px solid var(--rule);
-      transition: border-color 0.2s;
+      margin-bottom: 10px;
       break-inside: avoid;
     }
 
-    .entry:hover {
-      border-left-color: var(--accent);
-    }
-
-    .entry-header {
+    .ent-top {
       display: flex;
       justify-content: space-between;
       align-items: baseline;
-      gap: 8px;
+      gap: 6px;
     }
 
-    .entry-org {
-      font-size: 10pt;
+    .ent-org {
+      font-size: 9.5pt;
       font-weight: 700;
       color: var(--text);
+      line-height: 1.2;
     }
 
-    .entry-date {
-      font-size: 8pt;
-      color: #999;
-      white-space: nowrap;
-      background: #f5f5f5;
-      padding: 1px 7px;
-      border-radius: 20px;
+    .ent-badge {
+      font-size: 6.5pt;
+      font-weight: 700;
+      padding: 1.5px 6px;
+      border-radius: 2px;
       flex-shrink: 0;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
     }
 
-    .entry-role {
-      font-size: 8.5pt;
-      color: var(--accent);
-      margin-bottom: 4px;
-      font-style: italic;
+    .badge-shipped {
+      background: rgba(29,233,182,0.12);
+      color: var(--accent2);
+      border: 1px solid rgba(29,233,182,0.28);
     }
 
-    .entry-role a {
-      color: var(--accent);
+    .badge-indev {
+      background: rgba(251,191,36,0.1);
+      color: #b45309;
+      border: 1px solid rgba(251,191,36,0.3);
+    }
+
+    .badge-date {
+      background: #f3f4f6;
+      color: var(--muted);
+      border: 1px solid #e5e7eb;
+    }
+
+    .ent-role {
+      font-size: 8pt;
+      color: var(--accent2);
+      font-weight: 600;
+      margin: 2px 0 4px;
+    }
+
+    .ent-role a {
+      color: var(--accent2);
       text-decoration: none;
     }
 
-    ul {
-      padding-left: 14px;
-      list-style: none;
+    /* Tech tags */
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 3px;
+      margin-bottom: 4px;
     }
 
+    .tag {
+      font-size: 6pt;
+      font-weight: 700;
+      color: #1a1a2e;
+      background: var(--tag-bg);
+      border: 1px solid var(--tag-bd);
+      padding: 1px 5px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    /* Bullets */
+    ul { padding-left: 0; list-style: none; }
+
     li {
-      font-size: 9pt;
-      color: #333;
-      margin-bottom: 2.5px;
+      font-size: 8pt;
+      color: #374151;
+      margin-bottom: 2px;
       line-height: 1.5;
       position: relative;
-      padding-left: 10px;
+      padding-left: 11px;
     }
 
     li::before {
-      content: '→';
+      content: '▸';
       position: absolute;
-      left: -2px;
-      color: var(--accent);
-      font-size: 8pt;
+      left: 0;
+      color: var(--accent2);
+      font-size: 7pt;
+      top: 1.5px;
     }
 
     /* =====================================================
-       EDUCATION
-       ===================================================== */
-
-    .edu-entry {
-      margin-bottom: 7px;
-      padding-left: 10px;
-      border-left: 2px solid var(--rule);
-      break-inside: avoid;
-    }
-
-    /* =====================================================
-       PRINT
-       ===================================================== */
-
-    /* =====================================================
-       FOOTER — fixed so Chrome repeats it on every page
+       FOOTER
        ===================================================== */
 
     .resume-footer {
@@ -320,15 +362,15 @@
       bottom: 0;
       left: 0;
       right: 0;
-      height: 28px;
+      height: 22px;
       background: var(--dark);
-      border-top: 2px solid var(--accent);
+      border-top: 1px solid rgba(29,233,182,0.2);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 0 30px;
-      font-size: 7.5pt;
-      color: #555;
+      padding: 0 18px;
+      font-size: 6.5pt;
+      color: rgba(255,255,255,0.28);
     }
 
     .resume-footer a {
@@ -337,13 +379,9 @@
       font-weight: 700;
     }
 
-    /* =====================================================
-       PRINT
-       ===================================================== */
-
     @media print {
-      body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
-      .page { width: 100%; min-height: unset; }
+      body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { width: 100%; }
       a { text-decoration: none; }
     }
   </style>
@@ -351,205 +389,245 @@
 <body>
 <div class="page">
 
-  <!-- ===== HEADER ===== -->
-  <header class="header">
-    <img class="header-photo" src="images/Generic/photo.jpg" alt="Andre Hanna" />
-    <div class="header-info">
-      <div class="header-name">Andre Hanna</div>
-      <div class="header-title">Game Designer &nbsp;·&nbsp; Programmer &nbsp;·&nbsp; Technical Artist</div>
-      <div class="contact-grid">
-        <a class="contact-item contact-item--primary" href="https://andrehanna.site" target="_blank">andrehanna.site</a>
-        <span class="contact-item">0490 128 950</span>
-        <a class="contact-item" href="mailto:andrehanna49@gmail.com">andrehanna49@gmail.com</a>
-        <span class="contact-item">Sydney, Australia</span>
-        <a class="contact-item contact-item--secondary" href="https://www.linkedin.com/in/andre-hanna-8a0a04259/" target="_blank">LinkedIn</a>
-        <a class="contact-item contact-item--secondary" href="https://github.com/AndreHanna04" target="_blank">GitHub</a>
-        <a class="contact-item contact-item--secondary" href="https://www.artstation.com/andrehanna9" target="_blank">ArtStation</a>
-        <a class="contact-item contact-item--secondary" href="https://andopie.itch.io/" target="_blank">itch.io</a>
+  <!-- ===================================================
+       SIDEBAR
+       =================================================== -->
+  <aside class="sidebar">
+
+    <!-- Identity -->
+    <div class="identity">
+      <img class="photo" src="images/Generic/photo.jpg" alt="Andre Hanna" />
+      <div>
+        <span class="name-first">Andre</span>
+        <span class="name-last">Hanna</span>
+        <div class="title-line">Game Designer<br>Programmer · Technical Artist</div>
+        <div class="tagline">"If you do it, do it different."</div>
       </div>
     </div>
-  </header>
 
-  <div class="accent-bar"></div>
+    <!-- Contact -->
+    <div class="sb-block">
+      <div class="sb-heading">Contact</div>
+      <div class="c-row"><span class="c-icon">⬡</span><a href="https://andrehanna.site">andrehanna.site</a></div>
+      <div class="c-row"><span class="c-icon">✆</span>0490 128 950</div>
+      <div class="c-row"><span class="c-icon">@</span><a href="mailto:andrehanna49@gmail.com">andrehanna49@gmail.com</a></div>
+      <div class="c-row"><span class="c-icon">◎</span>Sydney, Australia</div>
+      <div class="c-row"><span class="c-icon">in</span><a href="https://linkedin.com/in/andre-hanna-8a0a04259/">LinkedIn</a></div>
+      <div class="c-row"><span class="c-icon">⌥</span><a href="https://github.com/AndreHanna04">GitHub</a></div>
+      <div class="c-row"><span class="c-icon">✦</span><a href="https://artstation.com/andrehanna9">ArtStation</a></div>
+      <div class="c-row"><span class="c-icon">⚙</span><a href="https://andopie.itch.io/">itch.io</a></div>
+    </div>
 
-  <!-- ===== BODY ===== -->
-  <div class="body" style="padding-bottom: 48px;">
+    <!-- Skills -->
+    <div class="sb-block">
+      <div class="sb-heading">Skills</div>
 
-    <!-- SUMMARY -->
+      <div class="skill-cat">
+        <div class="skill-cat-label">Engine &amp; Code</div>
+        <div class="skill-cat-vals">UE5 · Unreal C++ · Blueprints · Unity · C# · Git</div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Technical Art</div>
+        <div class="skill-cat-vals">Custom &amp; Cell Shaders · GPU Foliage · Runtime Virtual Textures · Stylised Rendering</div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">3D Pipeline</div>
+        <div class="skill-cat-vals">ZBrush · Maya · Blender · Substance Painter · Houdini · Rigging · Control Rigs</div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">Systems &amp; Design</div>
+        <div class="skill-cat-vals">Online Multiplayer (EOS) · PS5 Console Port · Level Design · Sequencer · Metahuman · MoCap</div>
+      </div>
+      <div class="skill-cat">
+        <div class="skill-cat-label">QA &amp; Other</div>
+        <div class="skill-cat-vals">Bug Tracking · Regression Testing · Clip Studio Paint</div>
+      </div>
+    </div>
+
+    <!-- Education -->
+    <div class="sb-block">
+      <div class="sb-heading">Education</div>
+      <div class="edu-row">
+        <div class="edu-deg">Bachelor of Game Design</div>
+        <div class="edu-school">Academy of Interactive Technology · Sydney</div>
+        <div class="edu-yr">2023 – 2025</div>
+      </div>
+      <div class="edu-row">
+        <div class="edu-deg">Pre-Medicine (discontinued)</div>
+        <div class="edu-school">University of Wollongong</div>
+        <div class="edu-yr">2022</div>
+      </div>
+    </div>
+
+  </aside>
+
+  <!-- ===================================================
+       MAIN
+       =================================================== -->
+  <main class="main">
+
+    <!-- 01 · ABOUT -->
     <section>
-      <h2>Professional Summary</h2>
-      <p class="summary-text">
-        Graduate game developer specialising in Unreal Engine 5, with hands-on experience across C++ gameplay programming, technical art, and game design. Proven ability to own projects end-to-end — building GPU foliage systems, networked multiplayer gameplay, custom material shaders, and full 3D character pipelines. Six months of industry QA experience at Sweaty Chair. A self-driven generalist who thrives on hard problems, with a philosophy of always doing it different.
+      <div class="sec-head">
+        <span class="sec-num">01</span>
+        <span class="sec-title">About</span>
+        <div class="sec-rule"></div>
+      </div>
+      <p class="about-text">
+        I build games end-to-end — from engine architecture to GPU shaders, from multiplayer replication to full 3D character pipelines. Currently finishing a Bachelor of Game Design at AIT Sydney, with 6 months of industry QA at Sweaty Chair and a portfolio of solo UE5 projects. I'm a self-driven generalist who goes deep on every layer of the stack, and I'd always rather solve a hard problem in a new way than copy a safe one.
       </p>
     </section>
 
-    <!-- SKILLS -->
+    <!-- 02 · EXPERIENCE -->
     <section>
-      <h2>Technical Skills</h2>
-      <table class="skills-table">
-        <tr>
-          <td>Engine &amp; Programming</td>
-          <td>Unreal Engine 5 (UE5), Unreal C++, Blueprints Visual Scripting, Unity, C#, Git, Version Control</td>
-        </tr>
-        <tr>
-          <td>Technical Art</td>
-          <td>Advanced Materials &amp; Shaders, GPU Foliage Systems, Runtime Virtual Textures, Custom Cell Shaders, Stylized Rendering</td>
-        </tr>
-        <tr>
-          <td>3D &amp; Content Pipeline</td>
-          <td>Maya, ZBrush, Blender, Substance Painter, Houdini (terrain &amp; foliage), Character Creation, Rigging, Control Rigs</td>
-        </tr>
-        <tr>
-          <td>Systems &amp; Design</td>
-          <td>Online Multiplayer (Epic Online Services), Console Porting (PS5), Level Design, Sequencer &amp; Cinematic Animation, Metahuman, Motion Capture</td>
-        </tr>
-        <tr>
-          <td>Other</td>
-          <td>QA Workflow &amp; Bug Tracking, Regression Testing, Scope Management, Playtesting &amp; Iteration, 2D Art (Clip Studio Paint)</td>
-        </tr>
-      </table>
-    </section>
-
-    <!-- WORK EXPERIENCE -->
-    <section>
-      <h2>Work Experience</h2>
+      <div class="sec-head">
+        <span class="sec-num">02</span>
+        <span class="sec-title">Experience</span>
+        <div class="sec-rule"></div>
+      </div>
 
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-org">Sweaty Chair</span>
-          <span class="entry-date">Nov 2024 – Mar 2025</span>
+        <div class="ent-top">
+          <span class="ent-org">Sweaty Chair</span>
+          <span class="ent-badge badge-date">Nov 2024 – Mar 2025</span>
         </div>
-        <p class="entry-role">QA Intern &nbsp;·&nbsp; Sydney, Australia</p>
+        <div class="ent-role">QA Intern &nbsp;·&nbsp; Sydney, Australia</div>
+        <div class="tags">
+          <span class="tag">Unity</span>
+          <span class="tag">C#</span>
+          <span class="tag">Bug Tracking</span>
+          <span class="tag">Regression Testing</span>
+        </div>
         <ul>
-          <li>Executed structured test plans across a production game pipeline, identifying and documenting reproducible bugs using internal tracking systems.</li>
-          <li>Performed regression testing to verify bug fixes and maintain build stability across multiple release cycles.</li>
-          <li>Developed hands-on familiarity with Unity and C# through direct production-environment testing.</li>
-          <li>Collaborated with developers and producers to uphold production-quality standards and a strong culture of polish.</li>
+          <li>Executed structured test plans in a live production pipeline, documenting reproducible bugs using internal tracking tools.</li>
+          <li>Performed regression testing across multiple release cycles to maintain build stability.</li>
+          <li>Worked directly with developers and producers to uphold production quality and a strong culture of polish.</li>
         </ul>
       </div>
 
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-org">Foot Locker</span>
-          <span class="entry-date">Mar 2022 – Present</span>
+        <div class="ent-top">
+          <span class="ent-org">Foot Locker</span>
+          <span class="ent-badge badge-date">Mar 2022 – Present</span>
         </div>
-        <p class="entry-role">Sales Associate &nbsp;·&nbsp; Sydney, Australia</p>
+        <div class="ent-role">Sales Associate &nbsp;·&nbsp; Sydney, Australia</div>
         <ul>
-          <li>Coordinated team workflows to maintain efficient operations in a high-traffic retail environment.</li>
-          <li>Built strong communication, customer service, and interpersonal skills across a diverse team.</li>
+          <li>Coordinated team workflows in a high-traffic retail environment — built communication, leadership, and customer service skills.</li>
         </ul>
       </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- 03 · PROJECTS -->
     <section>
-      <h2>Projects</h2>
+      <div class="sec-head">
+        <span class="sec-num">03</span>
+        <span class="sec-title">Projects</span>
+        <div class="sec-rule"></div>
+      </div>
 
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-org">Whistle — Open-World Platformer</span>
-          <span class="entry-date">6 months · In Development</span>
+        <div class="ent-top">
+          <span class="ent-org">Whistle — Open-World Platformer</span>
+          <span class="ent-badge badge-indev">In Development</span>
         </div>
-        <p class="entry-role">Unreal Engine 5, Unreal C++, Technical Art, Level Design &nbsp;·&nbsp; Solo (game-side)</p>
+        <div class="ent-role">6 months &nbsp;·&nbsp; Solo game-side developer</div>
+        <div class="tags">
+          <span class="tag">UE5</span><span class="tag">C++</span><span class="tag">Technical Art</span><span class="tag">Level Design</span>
+        </div>
         <ul>
-          <li>Sole programmer, designer, and technical artist on a university team project — owned all game-side development independently.</li>
-          <li>Built a GPU-based foliage tracking system in C++ driving real-time environmental storytelling through reactive plant behaviour.</li>
-          <li>Engineered a Universal Occlusion Mask via a custom material node graph, dynamically keeping the player visible through any obstructing geometry.</li>
-          <li>Designed a modular input buffer system with Enhanced Input integration, coyote time, grind rail, and custom player movement.</li>
+          <li>Sole programmer, designer, and technical artist on a team project — owned all game-side development independently.</li>
+          <li>Built a GPU-based foliage tracking system in C++ driving real-time reactive environmental storytelling.</li>
+          <li>Engineered a Universal Occlusion Mask via custom material node graph, dynamically keeping the player visible through any geometry.</li>
+          <li>Designed a modular input buffer with Enhanced Input, coyote time, grind rail, and custom player movement.</li>
         </ul>
       </div>
 
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-org">Multiplayer Game Dev — Zero-Gravity Shooter</span>
-          <span class="entry-date">1 trimester · Complete</span>
+        <div class="ent-top">
+          <span class="ent-org">Zero-Gravity Multiplayer Shooter</span>
+          <span class="ent-badge badge-shipped">Shipped</span>
         </div>
-        <p class="entry-role">Unreal Engine 5, C++, Epic Online Services &nbsp;·&nbsp; Solo</p>
+        <div class="ent-role">1 trimester &nbsp;·&nbsp; Solo</div>
+        <div class="tags">
+          <span class="tag">UE5</span><span class="tag">C++</span><span class="tag">Epic Online Services</span><span class="tag">Networking</span>
+        </div>
         <ul>
-          <li>Designed and built a networked zero-gravity chaos shooter using Epic Online Services for session management and gameplay replication.</li>
-          <li>Diagnosed and resolved desync bugs across multiplayer builds through systematic reproduction, logging, and iteration.</li>
-          <li>Implemented UX feedback systems — hitmarkers, resource meters — to improve player communication and game feel.</li>
+          <li>Designed and built a networked zero-gravity chaos shooter using EOS for session management and gameplay replication.</li>
+          <li>Diagnosed and resolved desync bugs through systematic reproduction, logging, and iteration.</li>
         </ul>
       </div>
 
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-org">Environmental Design &amp; Creation — Stylized Landscape</span>
-          <span class="entry-date">1 trimester · Complete</span>
+        <div class="ent-top">
+          <span class="ent-org">Stylised Landscape — Environmental Design</span>
+          <span class="ent-badge badge-shipped">Shipped</span>
         </div>
-        <p class="entry-role">Unreal Engine 5, Houdini, Blender, Technical Art &nbsp;·&nbsp; Solo</p>
+        <div class="ent-role">1 trimester &nbsp;·&nbsp; Solo</div>
+        <div class="tags">
+          <span class="tag">UE5</span><span class="tag">Houdini</span><span class="tag">Blender</span><span class="tag">Technical Art</span>
+        </div>
         <ul>
-          <li>Built a custom GPU-optimised grass pipeline: Houdini → Blender → UE5, with hand-tuned LOD transitions for performance.</li>
-          <li>Implemented Runtime Virtual Textures for dynamic world-colour blending across all environment foliage.</li>
-          <li>Designed a reversed-gravity environment concept with upward-flowing water and inverted root-grown flora.</li>
+          <li>Built a GPU-optimised grass pipeline (Houdini → Blender → UE5) with hand-tuned LOD transitions for performance.</li>
+          <li>Implemented Runtime Virtual Textures for dynamic world-colour blending; designed a reversed-gravity concept environment.</li>
         </ul>
       </div>
 
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-org">3D Character Creation — Layton</span>
-          <span class="entry-date">1 trimester · Complete</span>
+        <div class="ent-top">
+          <span class="ent-org">3D Character — Layton</span>
+          <span class="ent-badge badge-shipped">Shipped</span>
         </div>
-        <p class="entry-role">ZBrush, Maya, Substance Painter, Unreal Engine 5 &nbsp;·&nbsp; Solo</p>
+        <div class="ent-role">1 trimester &nbsp;·&nbsp; Solo &nbsp;·&nbsp; Full DCC pipeline</div>
+        <div class="tags">
+          <span class="tag">ZBrush</span><span class="tag">Maya</span><span class="tag">Substance Painter</span><span class="tag">UE5</span>
+        </div>
         <ul>
-          <li>Executed a full DCC character pipeline: concept → ZBrush high-poly sculpt → Maya retopology (ZRemesher) → Substance Painter PBR texturing → UE5 render.</li>
-          <li>Developed a custom cell shader and control rig for stylised in-engine animation.</li>
+          <li>End-to-end pipeline: concept → ZBrush high-poly sculpt → Maya retopology → Substance PBR texturing → UE5 render.</li>
+          <li>Built a custom cell shader and control rig for stylised in-engine character animation.</li>
         </ul>
       </div>
 
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-org">Junkyard Drifter — Ubisoft AU/NZ Game Jam 2024</span>
-          <span class="entry-date">2 weeks · Complete</span>
+        <div class="ent-top">
+          <span class="ent-org">Junkyard Drifter — Ubisoft AU/NZ Game Jam 2024</span>
+          <span class="ent-badge badge-shipped">Shipped</span>
         </div>
-        <p class="entry-role">Unreal Engine 5 &nbsp;·&nbsp; Solo &nbsp;·&nbsp; <a href="https://andopie.itch.io/junkworld-drifter" target="_blank">andopie.itch.io/junkworld-drifter</a></p>
+        <div class="ent-role">2 weeks &nbsp;·&nbsp; Solo &nbsp;·&nbsp; <a href="https://andopie.itch.io/junkworld-drifter" target="_blank">andopie.itch.io/junkworld-drifter</a></div>
+        <div class="tags">
+          <span class="tag">UE5</span><span class="tag">Game Jam</span><span class="tag">Solo</span>
+        </div>
         <ul>
           <li>Designed, built, and shipped a solo skating game in 2 weeks for the Ubisoft AU/NZ 2024 Game Jam.</li>
-          <li>Applied rigorous scope control and playtesting-driven iteration to deliver a complete, polished experience under deadline.</li>
+          <li>Delivered a complete, polished experience through rigorous scope control and playtesting-driven iteration.</li>
         </ul>
       </div>
 
       <div class="entry">
-        <div class="entry-header">
-          <span class="entry-org">Console Game Dev — PS5 Port</span>
-          <span class="entry-date">Complete</span>
+        <div class="ent-top">
+          <span class="ent-org">Hack-and-Slash — PS5 Console Port</span>
+          <span class="ent-badge badge-shipped">Shipped</span>
         </div>
-        <p class="entry-role">Unreal Engine 5, PlayStation 5 &nbsp;·&nbsp; Solo</p>
+        <div class="ent-role">Solo</div>
+        <div class="tags">
+          <span class="tag">UE5</span><span class="tag">PlayStation 5</span><span class="tag">Console SDK</span>
+        </div>
         <ul>
-          <li>Ported a hack-and-slash game to PS5, gaining practical experience with console SDK requirements, platform-specific input handling, and certification workflows.</li>
+          <li>Ported a hack-and-slash game to PS5 — platform-specific input handling, SDK requirements, and certification workflows.</li>
         </ul>
       </div>
+
     </section>
 
-    <!-- EDUCATION -->
-    <section>
-      <h2>Education</h2>
+  </main>
+</div>
 
-      <div class="edu-entry">
-        <div class="entry-header">
-          <span class="entry-org">Academy of Interactive Technology (AIT) &nbsp;·&nbsp; Sydney</span>
-          <span class="entry-date">2023 – 2025</span>
-        </div>
-        <p class="entry-role" style="font-style:normal;">Bachelor of Game Design</p>
-      </div>
+<!-- ===================================================
+     FOOTER
+     =================================================== -->
+<footer class="resume-footer">
+  <span>Andre Hanna &nbsp;·&nbsp; andrehanna49@gmail.com &nbsp;·&nbsp; 0490 128 950</span>
+  <a href="https://andrehanna.site" target="_blank">andrehanna.site</a>
+</footer>
 
-      <div class="edu-entry">
-        <div class="entry-header">
-          <span class="entry-org">University of Wollongong</span>
-          <span class="entry-date">2022</span>
-        </div>
-        <p class="entry-role" style="font-style:normal;">Bachelor of Pre-Medicine (discontinued)</p>
-      </div>
-    </section>
-
-  </div><!-- /.body -->
-
-  <!-- ===== FOOTER — repeats on every printed page ===== -->
-  <footer class="resume-footer">
-    <span>Andre Hanna &nbsp;·&nbsp; Game Designer, Programmer &amp; Technical Artist</span>
-    <a href="https://andrehanna.site" target="_blank">andrehanna.site</a>
-  </footer>
-
-</div><!-- /.page -->
 </body>
 </html>

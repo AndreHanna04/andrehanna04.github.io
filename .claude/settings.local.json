@@ -8,7 +8,8 @@
       "PowerShell(choco *)",
       "PowerShell(pip *)",
       "WebFetch(domain:www.artstation.com)",
-      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Andre\\\\Documents\\\\GitHub\\\\andrehanna04.github.io\\\\assets\\\\images\\\\whistle\" | ForEach-Object { $_.Name })"
+      "PowerShell(Get-ChildItem \"C:\\\\Users\\\\Andre\\\\Documents\\\\GitHub\\\\andrehanna04.github.io\\\\assets\\\\images\\\\whistle\" | ForEach-Object { $_.Name })",
+      "WebSearch"
     ]
   }
 }
