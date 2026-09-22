@@ -357,6 +357,7 @@ A JSON config drives the thresholds and an allowlist lets a specific (asset, rul
     details: [
       { label: "Role",     value: "Solo" },
       { label: "Context",  value: "ELVTR Technical Art course" },
+      { label: "Duration", value: "Jun – Jul 2026" },
       { label: "Language", value: "Python" },
       { label: "Engine",   value: "Unreal Engine 5" },
       { label: "Status",   value: "Complete — open source" },
