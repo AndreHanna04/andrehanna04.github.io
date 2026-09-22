@@ -131,6 +131,14 @@ document.getElementById('modalOverlay').addEventListener('click', (e) => {
   if (img) openLightbox(img.src, img.alt);
 });
 
+// Page-level thumbnails (e.g. certificates) opt in with data-lightbox
+document.addEventListener('click', (e) => {
+  const trigger = e.target.closest('[data-lightbox]');
+  if (!trigger) return;
+  const img = trigger.querySelector('img');
+  openLightbox(trigger.dataset.lightbox, img ? img.alt : '');
+});
+
 // ---- SCROLL REVEAL ----
 const reveals = document.querySelectorAll('.section-header, .skill-group, .experience-item, .about-grid, .social-links, .contact-intro, .contact-email-btn');
 

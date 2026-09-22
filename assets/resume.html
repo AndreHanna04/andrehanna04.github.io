@@ -200,6 +200,22 @@
       color: rgba(255,255,255,0.28);
     }
 
+    /* Certificate thumbnail */
+    .cert-shot {
+      display: block;
+      width: 72%;
+      margin-top: 6px;
+      border: 1px solid var(--rule);
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .cert-shot img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
     /* =====================================================
        MAIN
        ===================================================== */
@@ -452,6 +468,11 @@
     <div class="sb-block">
       <div class="sb-heading">Education</div>
       <div class="edu-row">
+        <div class="edu-deg">Technical Art — Certificate of Completion</div>
+        <div class="edu-school">ELVTR · Instructor-led course</div>
+        <div class="edu-yr">2026 · Awarded for exceptional performance</div>
+      </div>
+      <div class="edu-row">
         <div class="edu-deg">Bachelor of Game Design</div>
         <div class="edu-school">Academy of Interactive Technology · Sydney</div>
         <div class="edu-yr">2023 – 2025</div>
@@ -488,6 +509,25 @@
         <span class="sec-num">02</span>
         <span class="sec-title">Experience</span>
         <div class="sec-rule"></div>
+      </div>
+
+      <div class="entry">
+        <div class="ent-top">
+          <span class="ent-org">ELVTR — Technical Art</span>
+          <span class="ent-badge badge-date">2026</span>
+        </div>
+        <div class="ent-role">Instructor-led course (Gavyn Thompson) &nbsp;·&nbsp; <a href="https://andrehanna.site/assets/certificates/elvtr-technical-art-certificate.pdf" target="_blank">Certificate</a> &nbsp;·&nbsp; <a href="https://github.com/AndreHanna04/Unreal-Engine-Python-File-Validator" target="_blank">github.com/AndreHanna04/Unreal-Engine-Python-File-Validator</a></div>
+        <div class="tags">
+          <span class="tag">Python</span><span class="tag">UE5 Editor Scripting</span><span class="tag">Tools</span><span class="tag">Pipeline</span>
+        </div>
+        <ul>
+          <li>Completed the course with a Certificate of Completion awarded for exceptional performance across all coursework and assignments.</li>
+          <li>Built an Unreal Engine Python file validator — a rule-based framework checking extensions, file size, actor tick tags, and material settings, with config-driven allowlists and structured JSON reports.</li>
+          <li>Runs in-editor and from the command line, filterable by rule type, severity, or name so it slots into a review or CI step.</li>
+        </ul>
+        <a class="cert-shot" href="https://andrehanna.site/assets/certificates/elvtr-technical-art-certificate.pdf" target="_blank">
+          <img src="certificates/elvtr-technical-art-certificate.png" alt="ELVTR Certificate of Completion — Andre Hanna, Technical Art, September 2026" />
+        </a>
       </div>
 
       <div class="entry">

@@ -327,6 +327,45 @@ const PROJECTS = [
     links: [],
   },
 
+  {
+    id: 9,
+    title: "Unreal Engine Python File Validator",
+    summary: "A rule-based asset validation framework for Unreal Engine — written in Python, it catches naming, file size, actor tick, and material problems before they reach the build.",
+    description: `Built during the ELVTR Technical Art course, this is a validation framework for Unreal projects. It scans a directory or the live editor content browser and runs every registered rule against each asset — allowed extensions, file size limits, actors that tick without the required tag, and materials left double-sided.
+
+The rules are the interesting part: each one is a small self-contained class that registers itself automatically, so adding a new check means dropping a file in the rules folder rather than editing the runner. Rules carry a category and a severity, and a run can be filtered down to any combination of the two — or to a specific list of rules by name.
+
+A JSON config drives the thresholds and an allowlist lets a specific (asset, rule) pair be exempted with a reason, an author, and an expiry date, so temporary exceptions expire instead of quietly becoming permanent. Runs print a readable pass/fail summary to the console or the Unreal Output Log, and can also write a structured JSON report for tooling to consume.`,
+    categories: ["programming", "tech-art"],
+    tags: ["Python", "Unreal Engine 5", "Tooling", "Pipeline"],
+    media: {
+      type: "image",
+      src: "assets/images/Unreal Python Validator/validator-run.png",
+    },
+    videos: [],
+    gallery: [
+      { src: "assets/images/Unreal Python Validator/validator-run.png",    caption: "Command-line run — per-asset results and pass/fail summary" },
+      { src: "assets/images/Unreal Python Validator/validator-report.png", caption: "Structured JSON report from an in-editor run over 61 assets" },
+    ],
+    highlights: [
+      "Self-registering rule classes — new checks are added by dropping in a file, not editing the runner",
+      "Runs both standalone and inside the Unreal editor against live content",
+      "Config-driven allowlist with reason, author, and expiry so exceptions can't go stale",
+      "Filter a run by rule category, severity, or explicit rule list",
+      "Structured JSON reporting alongside human-readable console output",
+    ],
+    details: [
+      { label: "Role",     value: "Solo" },
+      { label: "Context",  value: "ELVTR Technical Art course" },
+      { label: "Language", value: "Python" },
+      { label: "Engine",   value: "Unreal Engine 5" },
+      { label: "Status",   value: "Complete — open source" },
+    ],
+    links: [
+      { label: "GitHub Repository", url: "https://github.com/AndreHanna04/Unreal-Engine-Python-File-Validator" },
+    ],
+  },
+
   // ---- ADD MORE PROJECTS BELOW ----
 ];
 
