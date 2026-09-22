@@ -660,29 +660,6 @@ ul { list-style: none; }
   border-color: var(--highlight);
 }
 
-.cert-thumb {
-  display: block;
-  width: 100%;
-  margin-top: 1.2rem;
-  padding: 0;
-  border: 1px solid var(--light);
-  border-radius: var(--radius-sm);
-  background: none;
-  overflow: hidden;
-  cursor: zoom-in;
-  transition: border-color var(--transition), transform var(--transition);
-}
-
-.cert-thumb:hover {
-  border-color: var(--highlight);
-  transform: translateY(-2px);
-}
-
-.cert-thumb img {
-  width: 100%;
-  height: auto;
-}
-
 @media (max-width: 600px) {
   .experience-item {
     grid-template-columns: 1fr;
